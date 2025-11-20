@@ -154,6 +154,11 @@
     .modal-container h1 {
         font-size: 2em;
     }
+    @media (max-width: 500px) {
+        .modal-container h1 {
+            font-size: 1.8em;
+        }
+    }
     .ref-h1 {
         font-size: 3em;
     }
@@ -709,6 +714,37 @@
     .scroll-left,
     .scroll-right {
         transition: all 0.5s ease-out;
+    }
+    /* ปรับ Modal */
+    .modal-container {
+        width: 95%;
+        padding: 15px;
+        max-height: 95vh;
+    }
+    /* ปรับ Game Button */
+    .game-btn {
+        width: 95%;
+        height: auto;
+        padding: 15px;
+    }
+    .game-btn span {
+        font-size: 16px;
+    }
+    /* ปรับ Fish Image */
+    .fish-img {
+        width: 120px;
+        margin: 10px 0;
+    }
+    /* ปรับ Absolute Elements */
+    .layer11 {
+        width: 25%;
+    }
+    /* ปรับ Critical Images */
+    .critical-image1,
+    .critical-image2,
+    .critical-image3 {
+        width: 100%;
+        max-width: none;
     }
 }
 
@@ -2800,6 +2836,77 @@ body.dark .image-container .pin-btn8::before {
     /* fade in ลื่น */
 }
 
+
+/* ✅ แก้ไข */
+
+@media (max-width: 768px) {
+    .layer11 {
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+}
+
+
+/* ✅ แก้ไข */
+
+@media (max-width: 768px) {
+    .background-grass {
+        width: 150vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .background-grass {
+        width: 120vw;
+    }
+}
+
+
+/* เพิ่มขนาด touch target */
+
+@media (max-width: 768px) {
+    .pin-btn1,
+    .pin-btn2,
+    .pin-btn3,
+    .pin-btn4,
+    .pin-btn5,
+    .pin-btn6,
+    .pin-btn7,
+    .pin-btn8 {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    .game-btn span {
+        font-size: 18px;
+        /* ลดจาก 48px */
+    }
+}
+
+@media (max-width: 500px) {
+    .may-text,
+    .may-card {
+        padding: 15px;
+        /* ลด padding */
+    }
+    .report-box {
+        padding: 15px 20px;
+        /* ลด padding */
+    }
+}
+
+@media (max-width: 500px) {
+    .critical-image {
+        width: 100%;
+        max-width: none;
+    }
+    .fish-img {
+        width: 150px;
+        /* ลดจาก 300px */
+        margin: 10px auto;
+    }
+}
+
 .layer11.show {
     opacity: 1;
     /* animation float ยังคงทำงานอยู่ ไม่ต้องใส่ซ้ำ */
@@ -3586,7 +3693,8 @@ img[alt="waterbottom-img"].show {
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 800px;
+    width: 90%;
+    max-width: 800px;
     height: 380px;
     margin: 100px auto;
     top: -3000px;
