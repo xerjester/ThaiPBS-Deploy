@@ -1,0 +1,3798 @@
+/* =======================waterbottom-img
+   General Styles
+======================= */
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('fonts/CroissantThin-Regular.ttf') format('woff2');
+}
+
+html,
+body {
+    font-family: 'MyFont', sans-serif;
+    padding: 0;
+    scroll-behavior: smooth;
+    background: #ffc086;
+    transition: background 939ms ease;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+body.dark {
+    background-color: #000;
+}
+
+#map {
+    height: 1400px;
+}
+
+
+/* =======================
+   Scroll Animations
+======================= */
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* =======================
+   Header / Hero Section
+======================= */
+
+header {
+    position: relative;
+    height: 100vh;
+    background-image: url("assets/enity/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.firstperson {
+    display: block;
+    position: absolute;
+    width: 80%;
+    height: 120%;
+    background-image: url('assets/enity/firstperson.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    margin: 20px 0;
+    top: 150px;
+    right: 400px;
+    transform: translateX(-100px);
+    /* เริ่มต้นอยู่ทางซ้าย */
+    animation: slideIn 2s ease-out forwards;
+}
+
+.secondperson {
+    display: block;
+    position: absolute;
+    width: 80%;
+    height: 120%;
+    top: 100px;
+    left: 650px;
+    background-image: url('assets/firstperson.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    margin: 20px 0;
+    transform: translateX(100px);
+    animation: slideInRight 2s ease-out 1s forwards;
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(500px) scale(0.55);
+        /* เริ่มจากซ้าย */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        /* เลื่อนเข้าที่เดิม */
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-500px) scale(0.55);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+
+/* ชั้น overlay มืดบางๆ ช่วยให้ข้อความอ่านชัด */
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+
+/* ข้อความตรงกลาง */
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero-text p {
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.text-shadow {
+    text-shadow: var(--text-shadow-lg);
+}
+
+
+/* เอฟเฟกต์ไล่ระดับเฉพาะส่วนล่าง */
+
+header::after,
+header::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 900ms ease;
+    /* ค่อย ๆ จางแทนการเปลี่ยนสี */
+}
+
+
+/* gradient ของโหมดสว่าง */
+
+header::after {
+    background: linear-gradient(to top, #ffc086, rgba(255, 255, 255, 0));
+    opacity: 1;
+}
+
+
+/* gradient ของโหมดมืด */
+
+header::before {
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    opacity: 0;
+}
+
+
+/* เมื่อเปลี่ยนเป็น dark mode */
+
+header.dark::after {
+    opacity: 0;
+    /* ค่อย ๆ จาง gradient ขาวออก */
+}
+
+header.dark::before {
+    opacity: 1;
+    /* ค่อย ๆ เผย gradient ดำ */
+}
+
+#test {
+    background: linear-gradient(to top, rgb(2, 0, 99), rgba(110, 209, 255, 0.747));
+    height: 2500px;
+    position: relative;
+    /* เพื่อให้ภาพ absolute อ้างอิงกับ section นี้ */
+    overflow: visible;
+    /* ป้องกันภาพถูกตัด */
+}
+
+.testContainer p {
+    position: relative;
+    top: 10px;
+}
+
+.testContainer {
+    height: 1800px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* เรียง h1 ด้านบน และรูปด้านล่าง */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 80px;
+    /* ระยะห่างระหว่าง h1 กับแถวรูป */
+}
+
+.testContainer h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 62px;
+    margin: 0;
+    position: relative;
+    top: -7%;
+}
+
+.testContainer h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 57px;
+    margin: 0;
+    position: relative;
+    top: 0%;
+}
+
+.testHead2,
+.doubleCode {
+    color: orangered;
+}
+
+
+/* แถวของรูปทั้งหมด */
+
+.imageRow {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    /* ระยะห่างเท่า ๆ กัน */
+    flex-wrap: wrap;
+    /* ปรับลงบรรทัดถ้าหน้าจอแคบ */
+}
+
+
+/* กล่องรองรับแต่ละรูป */
+
+.imageBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    /* เดิม 30% → เพิ่มขนาดรูปขึ้น */
+    max-width: 500px;
+    /* เพิ่มได้ถ้าอยากให้รูปใหญ่สุดได้ถึง 400px */
+    position: relative;
+    top: -27%;
+}
+
+.imageBox img {
+    height: auto;
+    border-radius: 10px;
+}
+
+.imageBox p {
+    margin-top: 10px;
+    color: orangered;
+    font-size: 39px;
+    font-weight: bold;
+}
+
+@keyframes fadeUp2 {
+    0% {
+        opacity: 0;
+        scale: 0.5;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+
+/* ---------------------------
+   สถานะก่อนโดน .show
+---------------------------- */
+
+.testContainer h1,
+.testContainer h2,
+.imageBox,
+.imageBox img,
+.imageBox p {
+    opacity: 0;
+}
+
+
+/* ---------------------------
+   เมื่อมี .show → เล่น fadeUp2
+---------------------------- */
+
+.testContainer h1.show,
+.testContainer h2.show,
+.imageBox.show,
+.imageBox img.show,
+.imageBox p.show {
+    opacity: 1;
+    animation: fadeUp2 0.5s ease-out forwards;
+}
+
+
+/* ---------------------------
+   Hover effect: ขยาย + เงา
+---------------------------- */
+
+.imageBox {
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+}
+
+.imageBox:hover {
+    transform: scale(1.5);
+}
+
+
+/* =======================
+   Chat Widget
+======================= */
+
+.container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 400px;
+    max-width: 100vw;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 580px;
+    max-height: calc(100vh - 40px);
+    z-index: 1000;
+    transition: bottom 0.5s ease;
+}
+
+.container.minimized {
+    height: auto;
+    width: 400px;
+}
+
+.container.minimized.show-chat {
+    bottom: 20px;
+}
+
+.container.minimized .chat-container,
+.container.minimized .input-container,
+.container.minimized .header p {
+    display: none;
+}
+
+.container.minimized .header {
+    padding: 10px 35px 10px 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.container.minimized .header h1 {
+    font-size: 18px;
+    margin: 0;
+    gap: 6px;
+}
+
+
+/* Header */
+
+.header {
+    background: orangered;
+    color: #fff;
+    padding: 12px 40px 12px 16px;
+    text-align: center;
+    position: relative;
+    transition: background 900ms ease;
+}
+
+.header h1 {
+    font-size: 16px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.header p {
+    font-size: 12px;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.title-wrapper {
+    display: inline-block;
+    animation: float 2s ease-in-out infinite alternate;
+}
+
+.titlekong {
+    display: inline-block;
+    opacity: 0;
+    animation: headSlideUp 1s ease-out 1s forwards;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.textkong {
+    position: relative;
+    top: 10px;
+    opacity: 0;
+    z-index: 3;
+    animation: headSlideUp 1s ease-out 1.2s forwards;
+}
+
+.colorblood {
+    animation: colorChange 10s ease-in-out infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+        color: orangered;
+    }
+    25% {
+        color: rgb(255, 0, 0);
+    }
+    50% {
+        color: rgb(255, 0, 0);
+    }
+    75% {
+        color: rgb(255, 0, 0);
+    }
+    100% {
+        color: orangered;
+    }
+}
+
+@keyframes headSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.minimize-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    line-height: 1;
+    transition: all 0.2s;
+}
+
+#about {
+    position: relative;
+    background: #ffc086;
+    overflow: hidden;
+    transition: background 939ms ease;
+    min-height: 100vh;
+    height: auto;
+    z-index: 1;
+    opacity: 0;
+}
+
+#about {
+    opacity: 1;
+}
+
+
+/* =======================
+   Scroll Animations
+======================= */
+
+#p1 {
+    position: relative;
+    top: 10px;
+    font-size: 27px;
+}
+
+#aboutinfo,
+#abouttext,
+#picture,
+.observe {
+    opacity: 0;
+    transform: translateX(-400px);
+    transition: all 0.9s ease;
+}
+
+#aboutinfo.show,
+#abouttext.show,
+#picture.show,
+.observe.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#abouthead {
+    font-size: 60px;
+}
+
+.observe h3,
+p {
+    font-size: 40px;
+}
+
+#text1 {
+    font-size: 25px;
+}
+
+
+/* Chat container */
+
+.chat-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+    background: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* Message */
+
+.message {
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUp 0.3s forwards ease-out;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.message-content {
+    max-width: 100%;
+    padding: 12px 16px;
+    border-radius: 16px;
+    word-wrap: break-word;
+    line-height: 1.5;
+    font-size: 17px;
+}
+
+.message.bot .message-content {
+    background: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+.message.user .message-content {
+    background: orangered;
+    color: #fff;
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.message-avatar:hover {
+    transform: scale(1.1);
+}
+
+.typing-indicator {
+    display: none;
+    padding: 8px 12px;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e0e0e0;
+    width: fit-content;
+}
+
+.typing-indicator span {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #FF6B35;
+    margin: 0 1px;
+    animation: typing 1.2s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+    30% {
+        transform: translateY(-6px);
+        opacity: 1;
+    }
+}
+
+.input-container {
+    padding: 12px 14px;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    gap: 8px;
+}
+
+#userInput {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+}
+
+#sendBtn {
+    padding: 10px 18px;
+    background: orangered;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+#sendBtn:hover {
+    opacity: 0.9;
+}
+
+
+/* 💬 ตั้งตำแหน่งคงที่ของกล่องแชท */
+
+.container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    left: auto !important;
+    /* ป้องกันไม่ให้ชิดซ้าย */
+    width: 420px;
+    max-width: calc(100vw - 40px);
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+
+/* 🧩 ตอนย่อ (minimized) */
+
+.container.minimized {
+    height: 40px;
+    width: 400px;
+    right: 20px !important;
+    left: auto !important;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+/* 🧩 ตอนขยาย (เปิดแชท) */
+
+.container:not(.minimized) {
+    bottom: 20px;
+    right: 20px !important;
+    left: auto !important;
+    width: 420px !important;
+    height: 550px;
+    max-width: calc(100vw - 40px);
+}
+
+
+/* =======================
+   Gradient Toggle (ขาว ↔ ดำ)
+======================= */
+
+
+/* Dark Mode Toggle Switch */
+
+.toggle-switch {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 999;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.switch-slider {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(65, 65, 65, 0.644);
+    border: 2px solid rgba(175, 175, 175, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 4;
+}
+
+.switch-slider::before {
+    content: '🌙';
+    position: absolute;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.switch-slider::after {
+    content: '☀️';
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.3) rotate(-180deg);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-checkbox:checked+.switch-slider {
+    background-color: orangered;
+    border-color: orangered;
+    box-shadow: 0 4px 20px rgba(255, 69, 0, 0.5);
+}
+
+.toggle-checkbox:checked+.switch-slider::before {
+    opacity: 0;
+    transform: scale(0.3) rotate(180deg);
+}
+
+.toggle-checkbox:checked+.switch-slider::after {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.switch-slider:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.toggle-checkbox:checked+.switch-slider:hover {
+    box-shadow: 0 6px 25px rgba(255, 69, 0, 0.6);
+}
+
+
+/* =======================
+   Dark Mode — สีดำเฉดเดียวกับ Header
+======================= */
+
+header.dark+section#about {
+    background: #000;
+    /* พื้นหลังสีดำเข้ม */
+    color: #f5f5f5;
+    /* ตัวอักษรขาว */
+}
+
+
+/* สีตัวอักษรทั้งหมดใน section ให้กลายเป็นขาว */
+
+header.dark+section#about h2,
+header.dark+section#about h3,
+header.dark+section#about p,
+header.dark+section#about .text-gray-700,
+header.dark+section#about .text-gray-600 {
+    color: #fff !important;
+}
+
+
+/* กล่องข้อมูล (card) ให้เข้ากับธีมดำ */
+
+header.dark+section#about .bg-white {
+    background: #111 !important;
+    border-color: #ff6600 !important;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
+}
+
+#picture {
+    width: 125%;
+    height: 125%;
+    background-image: url('assets/2.png');
+    background-position: center;
+    background-size: cover;
+    animation: pulse 5s ease-in-out infinite alternate;
+    background-color: wheat;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.water-container {
+    position: relative;
+    width: 100vw;
+    height: 250px;
+    /* ปรับสูงต่ำได้ตามต้องการ */
+    overflow: visible;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(100px);
+    /* เริ่มต้นเลื่อนลงเล็กน้อย */
+    transition: opacity 1s ease, transform 2s ease;
+    /* ค่อยๆ เฟดและเลื่อนขึ้น */
+    pointer-events: none;
+}
+
+.water-container.show {
+    opacity: 1;
+    transform: translateY(0);
+    /* เลื่อนขึ้นมาตำแหน่งเดิม */
+}
+
+
+/* คลื่นให้เต็มความกว้างของ viewport */
+
+.wave {
+    position: absolute;
+    width: 200vw;
+    /* เพิ่มจาก 200% เป็น 200vw ให้ครอบคลุมเต็มหน้าจอ */
+    height: 150px;
+    background-repeat: repeat-x;
+    animation: wave linear infinite;
+}
+
+.wave1 {
+    bottom: -10px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,60 Q300,20 600,60 T1200,60 L1200,120 L0,120 Z" fill="%235BA8D8" opacity="0.9"/></svg>');
+    background-size: 600px 120px;
+    animation: wave 5s linear infinite;
+}
+
+.wave2 {
+    bottom: -28px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,60 Q300,30 600,60 T1200,60 L1200,120 L0,120 Z" fill="%2364B3DE" opacity="0.7"/></svg>');
+    background-size: 600px 120px;
+    animation: wave 15s linear infinite reverse;
+}
+
+.wave3 {
+    bottom: -50px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,50 Q150,0 300,50 T600,50 T900,50 T1200,50 L1200,120 L0,120 Z" fill="%236DBDE0" opacity="0.8"/></svg>');
+    background-size: 600px 120px;
+    animation: wave 18s linear infinite;
+}
+
+.wave4 {
+    bottom: -60px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,60 Q300,10 600,60 T1200,60 L1200,120 L0,120 Z" fill="%237CC2E8" opacity="1"/></svg>');
+    background-size: 600px 125px;
+    animation: wave 20s linear infinite reverse;
+}
+
+.wave5 {
+    bottom: -200px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,60 Q300,10 600,60 T1200,60 L1200,120 L0,120 Z" fill="%237CC2E8" opacity="1"/></svg>');
+    background-size: 600px 130px;
+    animation: wave 25s linear infinite reverse;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-600px);
+    }
+}
+
+.ground {
+    position: absolute;
+    z-index: 2;
+    width: 100vw;
+    top: 2850px;
+    /* ระยะจากด้านบน */
+    /* เริ่มจากกึ่งกลางหน้าจอ */
+    /* เลื่อนกลับครึ่งความกว้าง */
+    opacity: 0;
+    transition: 1s;
+    pointer-events: none;
+}
+
+.ground.show {
+    opacity: 1;
+}
+
+
+/* Falling droplets */
+
+.droplet {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle at 35% 35%, #87CEEB, #1E90FF);
+    border-radius: 50%;
+    opacity: 0;
+    animation: fall linear infinite;
+    filter: drop-shadow(0 2px 6px rgba(30, 144, 255, 0.6));
+    box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) translateX(0);
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(600px) translateX(40px);
+        opacity: 0;
+    }
+}
+
+
+/* Floating particles */
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: floatParticle linear infinite;
+    filter: blur(0.5px);
+}
+
+.particle.small {
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.particle.medium {
+    width: 6px;
+    height: 6px;
+    background: rgba(70, 130, 180, 0.6);
+}
+
+.particle.large {
+    width: 10px;
+    height: 10px;
+    background: rgba(100, 149, 237, 0.5);
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(600px) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(150px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.text-section {
+    padding: 60px 40px;
+    text-align: center;
+    background: white;
+    color: #333;
+}
+
+.text-section h2 {
+    color: orangered;
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.text-section p {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.center-image {
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    /* กำหนดความสูง */
+    object-fit: cover;
+    /* รูปไม่บิดเบี้ยว */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.image-container {
+    max-width: 100vw;
+    max-height: 1920px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+    margin-left: -150px;
+    opacity: 0;
+    transform: scale(0.9);
+    /* เริ่มเล็กลงเล็กน้อย */
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.image-container.show {
+    opacity: 1;
+    transform: scale(1.5);
+    /* ค่อย ๆ ขยายกลับมาขนาดจริง */
+}
+
+.image-container span {
+    position: absolute;
+    display: flex;
+    font-size: 10px;
+    font-weight: bold;
+    color: rgb(151, 0, 0);
+    transition: color 0.4s ease;
+}
+
+.image-container.show span {
+    opacity: 1;
+    transition: opacity 3s ease;
+    transition-delay: 3s;
+    animation: slideUp 1s ease-out 4s forwards;
+}
+
+body.dark .image-container span {
+    color: #ffc086 !important;
+}
+
+.pin-btn1.show {
+    opacity: 1;
+    transform: scale(0.5);
+    transition: opacity 1.5s ease, transform 1s ease;
+    transition-delay: 1.6s;
+}
+
+.pin-btn2.show {
+    opacity: 1;
+    transform: scale(0.5);
+    transition: opacity 1.5s ease, transform 1s ease;
+    transition-delay: 1.8s;
+}
+
+.pin-btn3.show {
+    opacity: 1;
+    transform: scale(0.5);
+    transition: opacity 1.5s ease, transform 1s ease;
+    transition-delay: 2s;
+}
+
+.pin-btn4.show {
+    opacity: 1;
+    transform: scale(0.5);
+    transition: opacity 1.5s ease, transform 1s ease;
+    transition-delay: 2.2s;
+}
+
+.pin-btn5.show {
+    opacity: 1;
+    transform: scale(0.5);
+    transition: opacity 1.5s ease, transform 1s ease;
+    transition-delay: 2.4s;
+}
+
+.pin-btn6.show {
+    opacity: 1;
+    transform: scale(0.5);
+    transition: opacity 1.5s ease, transform 1s ease;
+    transition-delay: 2.6s;
+}
+
+.pin-btn7.show {
+    opacity: 1;
+    transform: scale(0.5);
+    transition: opacity 1.5s ease, transform 1s ease;
+    transition-delay: 2.8s;
+}
+
+.pin-btn8.show {
+    opacity: 1;
+    transform: scale(0.5);
+    transition: opacity 1.5s ease, transform 1s ease;
+    transition-delay: 3s;
+}
+
+
+/* ปุ่มหมุดปรับสวยขึ้น */
+
+.pin-btn1 {
+    opacity: 0;
+    position: absolute;
+    background: linear-gradient(145deg, #c50000);
+    /* ไล่สีส้มแดง */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    /* ทำให้กลม */
+    padding: 12px;
+    /* ขนาดปุ่ม */
+    font-size: 20px;
+    /* ไอคอนใหญ่ขึ้น */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(3.5);
+}
+
+
+/* Hover effect */
+
+.pin-btn1:hover {
+    /* ขยาย + หมุนเล็กน้อย */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 69, 0, 0.8);
+    background: linear-gradient(145deg, #721100);
+}
+
+.pin-btn2 {
+    opacity: 0;
+    position: absolute;
+    background: linear-gradient(145deg, #c50000);
+    /* ไล่สีส้มแดง */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    /* ทำให้กลม */
+    padding: 12px;
+    /* ขนาดปุ่ม */
+    font-size: 20px;
+    /* ไอคอนใหญ่ขึ้น */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(3.5);
+}
+
+
+/* Hover effect */
+
+.pin-btn2:hover {
+    /* ขยาย + หมุนเล็กน้อย */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 69, 0, 0.8);
+    background: linear-gradient(145deg, #721100);
+}
+
+.pin-btn3 {
+    opacity: 0;
+    position: absolute;
+    background: linear-gradient(145deg, #c50000);
+    /* ไล่สีส้มแดง */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    /* ทำให้กลม */
+    padding: 12px;
+    /* ขนาดปุ่ม */
+    font-size: 20px;
+    /* ไอคอนใหญ่ขึ้น */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(3.5);
+}
+
+
+/* Hover effect */
+
+.pin-btn3:hover {
+    /* ขยาย + หมุนเล็กน้อย */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 69, 0, 0.8);
+    background: linear-gradient(145deg, #721100);
+}
+
+.pin-btn4 {
+    opacity: 0;
+    position: absolute;
+    background: linear-gradient(145deg, #c50000);
+    /* ไล่สีส้มแดง */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    /* ทำให้กลม */
+    padding: 12px;
+    /* ขนาดปุ่ม */
+    font-size: 20px;
+    /* ไอคอนใหญ่ขึ้น */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(3.5);
+}
+
+
+/* Hover effect */
+
+.pin-btn4:hover {
+    /* ขยาย + หมุนเล็กน้อย */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 69, 0, 0.8);
+    background: linear-gradient(145deg, #721100);
+}
+
+.pin-btn5 {
+    opacity: 0;
+    position: absolute;
+    background: linear-gradient(145deg, #c50000);
+    /* ไล่สีส้มแดง */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    /* ทำให้กลม */
+    padding: 12px;
+    /* ขนาดปุ่ม */
+    font-size: 20px;
+    /* ไอคอนใหญ่ขึ้น */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(3.5);
+}
+
+
+/* Hover effect */
+
+.pin-btn5:hover {
+    /* ขยาย + หมุนเล็กน้อย */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 69, 0, 0.8);
+    background: linear-gradient(145deg, #721100);
+}
+
+.pin-btn6 {
+    opacity: 0;
+    position: absolute;
+    background: linear-gradient(145deg, #c50000);
+    /* ไล่สีส้มแดง */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    /* ทำให้กลม */
+    padding: 12px;
+    /* ขนาดปุ่ม */
+    font-size: 20px;
+    /* ไอคอนใหญ่ขึ้น */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(3.5);
+}
+
+
+/* Hover effect */
+
+.pin-btn6:hover {
+    /* ขยาย + หมุนเล็กน้อย */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 69, 0, 0.8);
+    background: linear-gradient(145deg, #721100);
+}
+
+.pin-btn7 {
+    opacity: 0;
+    position: absolute;
+    background: linear-gradient(145deg, #c50000);
+    /* ไล่สีส้มแดง */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    /* ทำให้กลม */
+    padding: 12px;
+    /* ขนาดปุ่ม */
+    font-size: 20px;
+    /* ไอคอนใหญ่ขึ้น */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(3.5);
+}
+
+
+/* Hover effect */
+
+.pin-btn7:hover {
+    /* ขยาย + หมุนเล็กน้อย */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 69, 0, 0.8);
+    background: linear-gradient(145deg, #721100);
+}
+
+.pin-btn8 {
+    opacity: 0;
+    position: absolute;
+    background: linear-gradient(145deg, #c50000);
+    /* ไล่สีส้มแดง */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    /* ทำให้กลม */
+    padding: 12px;
+    /* ขนาดปุ่ม */
+    font-size: 20px;
+    /* ไอคอนใหญ่ขึ้น */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(3.5);
+}
+
+.pin-btn8:hover {
+    /* ขยาย + หมุนเล็กน้อย */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 69, 0, 0.8);
+    background: linear-gradient(145deg, #721100);
+}
+
+
+/* Hover effect */
+
+.pin-btn1::before {
+    content: 'เป็นจุดที่แม่น้ำโขงเริ่มเข้าสู่ประเทศไทย\a(สามเหลี่ยมทองคำ)';
+    position: absolute;
+    /* สีตัวอักษร */
+    color: rgb(139, 0, 0);
+    background: rgba(255, 255, 255, 0.315);
+    /* พื้นหลังให้ข้อความเด่น */
+    font-weight: bold;
+    font-size: 30px;
+    /* ขนาดตัวอักษรพอดี */
+    padding: 4px 8px;
+    /* เว้นขอบรอบข้อความ */
+    border-radius: 6px;
+    /* มุมโค้งเล็กน้อย */
+    left: 550%;
+    /* ปลายเส้น */
+    top: -500%;
+    /* เลื่อนข้างหน้า + เอียงนิดหน่อย */
+    opacity: 0;
+    /* เริ่มซ่อน */
+    transition: opacity 0.3s ease-in-out;
+    /* delay หลังเส้นยืด */
+    width: max-content;
+    /* ขนาดพอดีกับข้อความ */
+    white-space: pre;
+}
+
+.pin-btn1:hover::before {
+    opacity: 1;
+}
+
+
+/* เส้นเฉียง */
+
+.pin-btn1::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: rgb(160, 0, 0);
+    top: 25%;
+    left: 100%;
+    transform-origin: left center;
+    transform: rotate(-30deg);
+    transition: width 0.4s ease;
+}
+
+
+/* เมื่อ hover */
+
+.pin-btn1:hover::after {
+    width: 125px;
+    /* ความยาวเส้น */
+}
+
+.pin-btn2::before {
+    content: 'เป็นจังหวัดแรกๆ ที่แม่น้ำโขงไหลผ่าน โดยเป็นพรมแดนธรรมชาติ';
+    position: absolute;
+    /* สีตัวอักษร */
+    color: rgb(139, 0, 0);
+    background: rgba(255, 255, 255, 0.315);
+    /* พื้นหลังให้ข้อความเด่น */
+    font-weight: bold;
+    font-size: 30px;
+    /* ขนาดตัวอักษรพอดี */
+    padding: 4px 8px;
+    /* เว้นขอบรอบข้อความ */
+    border-radius: 6px;
+    /* มุมโค้งเล็กน้อย */
+    left: 100%;
+    /* ปลายเส้น */
+    top: -900%;
+    /* เลื่อนข้างหน้า + เอียงนิดหน่อย */
+    opacity: 0;
+    /* เริ่มซ่อน */
+    transition: opacity 0.3s ease-in-out;
+    /* delay หลังเส้นยืด */
+    width: max-content;
+    /* ขนาดพอดีกับข้อความ */
+    white-space: pre;
+}
+
+.pin-btn2:hover::before {
+    opacity: 1;
+}
+
+
+/* เส้นเฉียง */
+
+.pin-btn2::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: rgb(160, 0, 0);
+    top: 0%;
+    left: 65%;
+    transform-origin: left center;
+    transform: rotate(-65deg);
+    transition: width 0.4s ease;
+}
+
+
+/* เมื่อ hover */
+
+.pin-btn2:hover::after {
+    width: 182px;
+    /* ความยาวเส้น */
+}
+
+.pin-btn3::before {
+    content: 'มีความสำคัญด้านเศรษฐกิจและการท่องเที่ยว\aมีสะพานมิตรภาพไทย-ลาว แห่งที่ 1';
+    position: absolute;
+    /* สีตัวอักษร */
+    color: rgb(139, 0, 0);
+    background: rgba(255, 255, 255, 0.315);
+    /* พื้นหลังให้ข้อความเด่น */
+    font-weight: bold;
+    font-size: 30px;
+    /* ขนาดตัวอักษรพอดี */
+    padding: 4px 8px;
+    /* เว้นขอบรอบข้อความ */
+    border-radius: 6px;
+    /* มุมโค้งเล็กน้อย */
+    left: 400%;
+    /* ปลายเส้น */
+    top: -1005%;
+    /* เลื่อนข้างหน้า + เอียงนิดหน่อย */
+    opacity: 0;
+    /* เริ่มซ่อน */
+    transition: opacity 0.3s ease-in-out;
+    /* delay หลังเส้นยืด */
+    width: max-content;
+    /* ขนาดพอดีกับข้อความ */
+    white-space: pre;
+}
+
+.pin-btn3:hover::before {
+    opacity: 1;
+}
+
+
+/* เส้นเฉียง */
+
+.pin-btn3::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: rgb(160, 0, 0);
+    top: 0%;
+    left: 70%;
+    transform-origin: left center;
+    transform: rotate(-60deg);
+    transition: width 0.4s ease;
+}
+
+
+/* เมื่อ hover */
+
+.pin-btn3:hover::after {
+    width: 170px;
+    /* ความยาวเส้น */
+}
+
+.pin-btn4::before {
+    content: 'เป็นจังหวัดใหม่ แยกออกมาจากหนองคาย มีแหล่งท่องเที่ยวริมโขง';
+    position: absolute;
+    /* สีตัวอักษร */
+    color: rgb(139, 0, 0);
+    background: rgba(255, 255, 255, 0.315);
+    /* พื้นหลังให้ข้อความเด่น */
+    font-weight: bold;
+    font-size: 30px;
+    /* ขนาดตัวอักษรพอดี */
+    padding: 4px 8px;
+    /* เว้นขอบรอบข้อความ */
+    border-radius: 6px;
+    /* มุมโค้งเล็กน้อย */
+    left: 1350%;
+    /* ปลายเส้น */
+    top: -300%;
+    /* เลื่อนข้างหน้า + เอียงนิดหน่อย */
+    opacity: 0;
+    /* เริ่มซ่อน */
+    transition: opacity 0.3s ease-in-out;
+    /* delay หลังเส้นยืด */
+    width: max-content;
+    /* ขนาดพอดีกับข้อความ */
+    white-space: pre;
+}
+
+.pin-btn4:hover::before {
+    opacity: 1;
+}
+
+
+/* เส้นเฉียง */
+
+.pin-btn4::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: rgb(160, 0, 0);
+    top: 50%;
+    left: 100%;
+    transform-origin: left center;
+    transform: rotate(-10deg);
+    transition: width 0.4s ease;
+}
+
+
+/* เมื่อ hover */
+
+.pin-btn4:hover::after {
+    width: 305px;
+    /* ความยาวเส้น */
+}
+
+.pin-btn5::before {
+    content: 'มีความยาวของแม่น้ำโขงไหลผ่านมาก\aมีสะพานมิตรภาพไทย-ลาว แห่งที่ 3';
+    position: absolute;
+    /* สีตัวอักษร */
+    color: rgb(139, 0, 0);
+    background: rgba(255, 255, 255, 0.315);
+    /* พื้นหลังให้ข้อความเด่น */
+    font-weight: bold;
+    font-size: 30px;
+    /* ขนาดตัวอักษรพอดี */
+    padding: 4px 8px;
+    /* เว้นขอบรอบข้อความ */
+    border-radius: 6px;
+    /* มุมโค้งเล็กน้อย */
+    left: 1350%;
+    /* ปลายเส้น */
+    top: -300%;
+    /* เลื่อนข้างหน้า + เอียงนิดหน่อย */
+    opacity: 0;
+    /* เริ่มซ่อน */
+    transition: opacity 0.3s ease-in-out;
+    /* delay หลังเส้นยืด */
+    width: max-content;
+    /* ขนาดพอดีกับข้อความ */
+    white-space: pre;
+}
+
+.pin-btn5:hover::before {
+    opacity: 1;
+}
+
+
+/* เส้นเฉียง */
+
+.pin-btn5::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: rgb(160, 0, 0);
+    top: 50%;
+    left: 100%;
+    transform-origin: left center;
+    transform: rotate(-10deg);
+    transition: width 0.4s ease;
+}
+
+
+/* เมื่อ hover */
+
+.pin-btn5:hover::after {
+    width: 305px;
+    /* ความยาวเส้น */
+}
+
+
+/* เมื่อ hover */
+
+.pin-btn6::before {
+    content: 'เป็นอีกจังหวัดสำคัญ มีสะพานมิตรภาพไทย-ลาว แห่งที่ 2';
+    position: absolute;
+    /* สีตัวอักษร */
+    color: rgb(139, 0, 0);
+    background: rgba(255, 255, 255, 0.315);
+    /* พื้นหลังให้ข้อความเด่น */
+    font-weight: bold;
+    font-size: 30px;
+    /* ขนาดตัวอักษรพอดี */
+    padding: 4px 8px;
+    /* เว้นขอบรอบข้อความ */
+    border-radius: 6px;
+    /* มุมโค้งเล็กน้อย */
+    left: 1350%;
+    /* ปลายเส้น */
+    top: -300%;
+    /* เลื่อนข้างหน้า + เอียงนิดหน่อย */
+    opacity: 0;
+    /* เริ่มซ่อน */
+    transition: opacity 0.3s ease-in-out;
+    /* delay หลังเส้นยืด */
+    width: max-content;
+    /* ขนาดพอดีกับข้อความ */
+    white-space: pre;
+}
+
+.pin-btn6:hover::before {
+    opacity: 1;
+}
+
+
+/* เส้นเฉียง */
+
+.pin-btn6::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: rgb(160, 0, 0);
+    top: 50%;
+    left: 100%;
+    transform-origin: left center;
+    transform: rotate(-10deg);
+    transition: width 0.4s ease;
+}
+
+
+/* เมื่อ hover */
+
+.pin-btn6:hover::after {
+    width: 305px;
+    /* ความยาวเส้น */
+}
+
+
+/* Hover effect */
+
+.pin-btn7::before {
+    content: 'เป็นส่วนสั้นๆ ที่เป็นพรมแดนร่วมกับแม่น้ำโขง';
+    position: absolute;
+    /* สีตัวอักษร */
+    color: rgb(139, 0, 0);
+    background: rgba(255, 255, 255, 0.315);
+    /* พื้นหลังให้ข้อความเด่น */
+    font-weight: bold;
+    font-size: 30px;
+    /* ขนาดตัวอักษรพอดี */
+    padding: 4px 8px;
+    /* เว้นขอบรอบข้อความ */
+    border-radius: 6px;
+    /* มุมโค้งเล็กน้อย */
+    left: 1350%;
+    /* ปลายเส้น */
+    top: -80%;
+    /* เลื่อนข้างหน้า + เอียงนิดหน่อย */
+    opacity: 0;
+    /* เริ่มซ่อน */
+    transition: opacity 0.3s ease-in-out;
+    /* delay หลังเส้นยืด */
+    width: max-content;
+    /* ขนาดพอดีกับข้อความ */
+    white-space: pre;
+}
+
+.pin-btn7:hover::before {
+    opacity: 1;
+}
+
+
+/* เส้นเฉียง */
+
+.pin-btn7::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: rgb(160, 0, 0);
+    top: 50%;
+    left: 100%;
+    transform-origin: left center;
+    transform: rotate(-2.5deg);
+    transition: width 0.4s ease;
+}
+
+
+/* เมื่อ hover */
+
+.pin-btn7:hover::after {
+    width: 300px;
+    /* ความยาวเส้น */
+}
+
+.pin-btn8::before {
+    content: 'เป็นจังหวัดสุดท้ายที่แม่น้ำโขงไหลผ่านไทย\aก่อนเข้าสู่ สปป.ลาว และกัมพูชา (อำเภอโขงเจียม)';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.315);
+    /* สีตัวอักษร */
+    color: rgb(139, 0, 0);
+    /* พื้นหลังให้ข้อความเด่น */
+    font-weight: bold;
+    font-size: 30px;
+    /* ขนาดตัวอักษรพอดี */
+    padding: 4px 8px;
+    /* เว้นขอบรอบข้อความ */
+    border-radius: 6px;
+    /* มุมโค้งเล็กน้อย */
+    left: 500%;
+    /* ปลายเส้น */
+    top: 550%;
+    /* เลื่อนข้างหน้า + เอียงนิดหน่อย */
+    opacity: 0;
+    /* เริ่มซ่อน */
+    transition: opacity 0.3s ease-in-out;
+    /* delay หลังเส้นยืด */
+    width: max-content;
+    /* ขนาดพอดีกับข้อความ */
+    white-space: pre;
+}
+
+.pin-btn8:hover::before {
+    opacity: 1;
+}
+
+
+/* เส้นเฉียง */
+
+.pin-btn8::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: rgb(160, 0, 0);
+    top: 80%;
+    left: 80%;
+    transform-origin: left center;
+    transform: rotate(45deg);
+    transition: width 0.4s ease;
+}
+
+
+/* เมื่อ hover */
+
+.pin-btn8:hover::after {
+    width: 158px;
+    /* ความยาวเส้น */
+}
+
+
+/* ตัว tooltip ซ่อนโดย default ไม่จับ pointer */
+
+.pin-btn1::before,
+.pin-btn2::before,
+.pin-btn3::before,
+.pin-btn4::before,
+.pin-btn5::before,
+.pin-btn6::before,
+.pin-btn7::before,
+.pin-btn8::before {
+    pointer-events: none;
+}
+
+
+/* ตอน hover ให้ tooltip เริ่มจับ pointer */
+
+.pin-btn1:hover::before,
+.pin-btn2:hover::before,
+.pin-btn3:hover::before,
+.pin-btn4:hover::before,
+.pin-btn5:hover::before,
+.pin-btn6:hover::before,
+.pin-btn7:hover::before,
+.pin-btn8:hover::before {
+    pointer-events: auto;
+}
+
+body.dark .image-container .pin-btn1::before,
+body.dark .image-container .pin-btn2::before,
+body.dark .image-container .pin-btn3::before,
+body.dark .image-container .pin-btn4::before,
+body.dark .image-container .pin-btn5::before,
+body.dark .image-container .pin-btn6::before,
+body.dark .image-container .pin-btn7::before,
+body.dark .image-container .pin-btn8::before {
+    color: #ffc086;
+}
+
+.background-grass {
+    position: relative;
+    top: 28%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+.grass-layer1 {
+    position: absolute;
+    z-index: 3;
+    top: 3200px;
+    width: 20vw;
+    /* ขนาด GIF */
+    height: auto;
+    transform: rotate(-10deg);
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+    animation: rotate 1s ease-in-out infinite alternate;
+}
+
+.grass-layer2 {
+    position: absolute;
+    z-index: 0;
+    top: 3050px;
+    left: 100px;
+    width: 35vw;
+    /* ขนาด GIF */
+    height: auto;
+    transform: rotate(-10deg);
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+    animation: rotate 1.5s ease-in-out infinite alternate;
+}
+
+.grass-layer3 {
+    position: absolute;
+    z-index: 3;
+    top: 3125px;
+    left: 30%;
+    width: 25vw;
+    /* ขนาด GIF */
+    height: auto;
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+    animation: rotate 1.25s ease-in-out infinite alternate;
+}
+
+.grass-layer4 {
+    position: absolute;
+    z-index: 3;
+    top: 3175px;
+    left: 35%;
+    width: 25vw;
+    /* ขนาด GIF */
+    height: auto;
+    transform: rotate(10deg);
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+    animation: rotate 1s ease-in-out infinite alternate;
+}
+
+.grass-layer5 {
+    position: absolute;
+    z-index: 0;
+    top: 3050px;
+    left: 700px;
+    width: 35vw;
+    /* ขนาด GIF */
+    height: auto;
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+    animation: rotate 1s ease-in-out infinite alternate;
+}
+
+.grass-layer6 {
+    position: absolute;
+    z-index: 2;
+    top: 3210px;
+    left: 875px;
+    width: 25vw;
+    /* ขนาด GIF */
+    height: auto;
+    transform: rotate(-15deg);
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+    animation: rotate 1.75s ease-in-out infinite alternate;
+}
+
+.grass-layer7 {
+    position: absolute;
+    z-index: 2;
+    top: 3200px;
+    left: 1100px;
+    width: 25vw;
+    /* ขนาด GIF */
+    height: auto;
+    transform: rotate(15deg);
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+    animation: rotate 1s ease-in-out infinite alternate;
+}
+
+.grass-layer8 {
+    position: absolute;
+    z-index: 0;
+    top: 3075px;
+    left: 1100px;
+    width: 35vw;
+    /* ขนาด GIF */
+    height: auto;
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+    animation: rotate 1s ease-in-out infinite alternate;
+}
+
+.grass-layer9 {
+    position: absolute;
+    z-index: 2;
+    top: 3100px;
+    left: 1400px;
+    width: 35vw;
+    /* ขนาด GIF */
+    height: auto;
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+    animation: rotate 1s ease-in-out infinite alternate;
+}
+
+
+/* เรือ */
+
+.layer11 {
+    opacity: 0;
+    position: absolute;
+    left: 70%;
+    top: 352%;
+    width: 20%;
+    height: 30%;
+    z-index: 12;
+    animation: float 2s ease-in-out infinite alternate;
+    transition: opacity 1s ease-in-out;
+    /* fade in ลื่น */
+}
+
+.layer11.show {
+    opacity: 1;
+    /* animation float ยังคงทำงานอยู่ ไม่ต้องใส่ซ้ำ */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+#ship {
+    pointer-events: auto;
+    z-index: 999;
+    cursor: grab;
+}
+
+#test img[alt="bottom-img"] {
+    position: absolute;
+    /* ลอยเหนือเนื้อหา */
+    bottom: -500px;
+    /* ระยะจากขอบล่าง section */
+    left: 50%;
+    /* เริ่มจากกึ่งกลางหน้าจอ */
+    transform: translateX(-50%);
+    /* เลื่อนกลับครึ่งความกว้างเพื่อกึ่งกลาง */
+    width: 150vw;
+    /* ขยายกว้างเกินหน้าจอ */
+    height: auto;
+    /* รักษาสัดส่วน */
+    max-width: none;
+    /* ป้องกันการจำกัดความกว้างจาก container */
+    opacity: 1;
+    z-index: 1;
+    position: relative;
+    top: -285px;
+    opacity: 0;
+}
+
+#test img[alt="bottom-img"].show {
+    opacity: 1;
+    animation: ImgSlideUp 1s ease-out;
+}
+
+@keyframes ImgSlideUp {
+    0% {
+        transform: translateY(100px) translateX(-50%);
+    }
+    100% {
+        transform: translateY(0) translateX(-50%);
+    }
+}
+
+img[alt="img-left"] {
+    left: 0%;
+    position: absolute;
+    top: 6500px;
+    z-index: 3;
+    opacity: 0;
+}
+
+img[alt="img-right"] {
+    right: 0%;
+    position: absolute;
+    top: 6500px;
+    z-index: 4;
+    opacity: 0;
+}
+
+img[alt="img-left"].show {
+    animation: slideIn 1s ease-in-out 500ms forwards;
+}
+
+img[alt="img-right"].show {
+    animation: slideInRight 1s ease-in-out 1000ms forwards;
+}
+
+img[alt="ship-bg"] {
+    position: absolute;
+    opacity: 10%;
+    top: 7770px;
+    z-index: 0;
+}
+
+img[alt="waterbottom-img"] {
+    transition: all 1s ease-out;
+    transform: translateX(-1000px);
+    position: absolute;
+    top: 8600px;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+}
+
+img[alt="waterbottom-img"].show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fourthpage {
+    background-color: #FAEBD6;
+    height: 3000px;
+    overflow: visible;
+    /* ให้รูปล้นออกมา */
+}
+
+.fourthpage h1 {
+    text-align: center;
+    left: 32%;
+    top: 6690px;
+    position: absolute;
+    color: #A6655F;
+    font-weight: bold;
+    font-size: 85px;
+    opacity: 0;
+}
+
+.fourthpage h1.show {
+    animation: fadeUp2 1s ease-in-out 1s forwards;
+}
+
+.fourthpage span {
+    color: orangered;
+    font-weight: bold;
+}
+
+.page {
+    left: 25%;
+    position: absolute;
+    top: 7000px;
+}
+
+.page h2 {
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+}
+
+.orengeContainer1 {
+    top: 20px;
+    width: 95%;
+    height: 26%;
+    border-radius: 5%;
+    position: absolute;
+    background-color: orangered;
+    transition: 2s;
+    opacity: 0;
+}
+
+.orengeContainer2 {
+    top: 470px;
+    width: 95%;
+    height: 26%;
+    border-radius: 5%;
+    position: absolute;
+    background-color: orangered;
+    transition: 2s;
+    opacity: 0;
+}
+
+.orengeContainer3 {
+    top: 930px;
+    width: 95%;
+    height: 40%;
+    border-radius: 5%;
+    position: absolute;
+    background-color: orangered;
+    transition: 2s;
+    opacity: 0;
+}
+
+.orengeContainer1.show,
+.orengeContainer2.show,
+.orengeContainer3.show {
+    opacity: 1;
+}
+
+.May.report {
+    background-color: #FAEBD6;
+    height: 1300px;
+}
+
+.May.report h1 {
+    top: -125px;
+    position: relative;
+    font-size: 5em;
+    font-weight: bold;
+    text-align: center;
+    color: #f47421;
+    margin-bottom: 250px;
+    margin-top: 100px;
+    z-index: 999;
+    opacity: 0;
+}
+
+.May.report h1.show {
+    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+}
+
+
+/* กล่องหลัก (จัดเรียงเหมือนเดิม) */
+
+.may-content {
+    position: relative;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 70px;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+.may-text {
+    background-color: #c9e9ff;
+    border-radius: 10%;
+    padding: 35px 25px;
+    width: 500px;
+    min-height: 550px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    color: #222;
+    font-weight: bold;
+    /* ตัวอักษรหนา */
+    flex-shrink: 0;
+    text-align: center;
+    /* ✅ จัดข้อความกึ่งกลาง */
+    line-height: 1.8;
+    font-size: 1.8em;
+    z-index: 11;
+    position: relative;
+    top: -565px;
+    transform: translateY(50px);
+    /* เริ่มจากด้านล่าง */
+    transition: opacity 2s ease-out, transform 2s ease-out;
+    opacity: 0;
+}
+
+.may-text.show {
+    opacity: 1;
+    transform: translateY(0);
+    /* กลับตำแหน่งเดิม */
+}
+
+.may-text p {
+    position: relative;
+    top: -55px;
+}
+
+
+/* กล่องวิดีโอฝั่งขวา */
+
+.may-card {
+    background-color: #c9e9ff;
+    border-radius: 10%;
+    padding: 25px;
+    width: 500px;
+    min-height: 500px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    z-index: 999;
+    position: relative;
+    top: -570px;
+    transform: translateY(50px);
+    /* เริ่มจากด้านล่าง */
+    transition: opacity 2s ease-out, transform 2s ease-out;
+    opacity: 0;
+}
+
+.may-card.show {
+    opacity: 1;
+    transform: translateY(0);
+    /* กลับตำแหน่งเดิม */
+}
+
+.spantwo {
+    position: absolute;
+    color: white;
+    top: -73px;
+    left: 23%;
+    font-size: 14px;
+    z-index: 11;
+}
+
+
+/* วิดีโอ YouTube */
+
+.may-card iframe {
+    position: relative;
+    top: 60px;
+    width: 100%;
+    height: 300px;
+    border-radius: 25px;
+    border: none;
+}
+
+.brownContainer1 {
+    position: absolute;
+    border-radius: 10%;
+    top: -550px;
+    left: 400px;
+    width: 26%;
+    height: 72%;
+    background-color: #834929;
+    z-index: 10;
+    transform: translateY(50px);
+    /* เริ่มจากด้านล่าง */
+    transition: opacity 2s ease-out, transform 2s ease-out;
+    opacity: 0;
+}
+
+.brownContainer1.show {
+    animation: fadeUp2 1s ease-in-out 1s forwards;
+}
+
+.brownContainer2 {
+    position: absolute;
+    border-radius: 10%;
+    top: -520px;
+    left: 965px;
+    width: 26%;
+    height: 96%;
+    background-color: #834929;
+    z-index: 10;
+    transform: translateY(50px);
+    /* เริ่มจากด้านล่าง */
+    transition: opacity 2s ease-out, transform 2s ease-out;
+    opacity: 0;
+}
+
+.brownContainer2.show {
+    animation: fadeUp2 1s ease-in-out 1s forwards;
+}
+
+
+/* สีคำสำคัญ */
+
+.may-text span {
+    color: #f47421;
+    font-weight: bold;
+}
+
+.pollution {
+    overflow: visible;
+    /* ป้องกันรูปถูกตัดออก */
+    z-index: 1;
+    background-color: #FAEBD6;
+    height: 4800px;
+}
+
+.pollution h1 {
+    position: relative;
+    font-weight: bold;
+    top: -200px;
+    left: 0%;
+    color: #834929;
+    text-align: center;
+    font-size: 57px;
+    opacity: 0;
+}
+
+.pollution h1.show {
+    animation: fadeUp2 1s ease-in-out 1s forwards;
+}
+
+.report-box {
+    position: absolute;
+    top: 10900px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10%;
+    height: 1400px;
+    width: 1000px;
+    padding: 30px 40px;
+    background-color: #ffffff;
+    z-index: 2;
+    /* อยู่ด้านหน้า brownreport */
+    transform: translateX(-100px);
+    /* เริ่มจากซ้าย */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    opacity: 0;
+}
+
+.report-box.show {
+    opacity: 1;
+    transform: translateX(-50%);
+}
+
+.report-box h2.report-title {
+    color: rgb(163, 85, 54);
+    /* สีหัวข้อหลัก */
+    font-size: 38px;
+    /* ขยายเล็กน้อยให้เด่นขึ้น */
+    font-weight: bold;
+    margin-bottom: 35px;
+    /* เพิ่มระยะระหว่างหัวข้อกับข้อความ */
+    text-align: center;
+}
+
+.report-box h2.report-title span {
+    color: #f47421;
+    /* เน้นข้อความบางส่วนด้วยสีส้ม */
+    font-weight: bold;
+    font-size: 47px;
+}
+
+.report-box p.report-text {
+    position: relative;
+    top: 10px;
+    color: rgb(163, 85, 54);
+    font-size: 28px;
+    margin-bottom: 25px;
+    /* เพิ่มช่องว่างระหว่างย่อหน้า */
+    text-align: center;
+    /* ปรับให้ย่อหน้าอ่านง่ายขึ้น */
+}
+
+.report-box .report-image {
+    display: block;
+    margin: 30px auto 0 auto;
+    max-width: 50%;
+    /* ความกว้างสูงสุด 70% ของกล่อง */
+    height: auto;
+    /* รักษาสัดส่วน */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.brownreport {
+    position: absolute;
+    top: 10970px;
+    /* เยื้องลงเล็กน้อย */
+    left: 44%;
+    /* เยื้องไปทางขวานิดหน่อย */
+    transform: translateX(-45%);
+    /* เลื่อนกลับเพื่อปรับสมดุล */
+    border-radius: 10%;
+    height: 1400px;
+    width: 1000px;
+    background-color: #834929;
+    z-index: 1;
+    /* อยู่ข้างหลัง report-box */
+    opacity: 0;
+}
+
+.report-span {
+    position: relative;
+    top: 1350px;
+    left: 25%;
+    color: white;
+}
+
+.report-span a {
+    color: white;
+}
+
+.brownreport.show {
+    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+}
+
+.problem {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 1330%;
+    font-size: 50px;
+    font-weight: bold;
+    /* ขนาดตัวอักษร h3 */
+    text-align: center;
+    /* จัดกลาง */
+    color: #834929;
+    /* สีข้อความหลัก */
+    line-height: 1.4;
+    /* เว้นบรรทัดให้พอดี */
+    z-index: 5;
+    /* เว้นระยะจาก element ถัดไป */
+    opacity: 0;
+}
+
+.problem.show {
+    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+}
+
+.problem span {
+    color: #834929;
+    /* เน้นสีส้ม */
+    font-weight: bold;
+    font-size: 60px;
+    /* ตัวหนา */
+}
+
+.critical-image {
+    position: absolute;
+    display: block;
+    top: 1363%;
+    left: 20%;
+    margin: 50px auto;
+    max-width: 60%;
+    height: auto;
+    border-radius: 10%;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100px);
+    /* เริ่มจากซ้าย */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    opacity: 0;
+}
+
+.critical-image.show {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.criticalinformation {
+    position: relative;
+    /* เพื่อให้ element ภายในสามารถจัดตำแหน่งได้ */
+    width: 100%;
+    /* กำหนดความกว้างของกล่องข้อความ */
+    margin: 3250px auto;
+    /* จัดกึ่งกลางแนวนอน พร้อมเว้นระยะบน-ล่าง */
+}
+
+.critical-text {
+    font-size: 38px;
+    line-height: 1.8;
+    color: #834929;
+    font-weight: normal;
+    text-align: center;
+    position: relative;
+    top: -150px;
+    opacity: 0;
+}
+
+.critical-text.show {
+    animation: fadeUp2 1s ease-in-out 1s forwards;
+}
+
+.critical-text span {
+    color: #f47421;
+    font-weight: bold;
+}
+
+.critical-text span1 {
+    color: #f47421;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.critical-text span2 {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 42px;
+}
+
+.vrisisVideo {
+    position: absolute;
+    max-width: none;
+    left: 27.5%;
+    top: 14400px;
+    margin: 25spx auto;
+    transform: translateX(20%);
+    z-index: 6;
+}
+
+.vrisisVideo iframe {
+    max-width: none;
+    border-radius: 10%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.fishsec .melt-img {
+    position: relative;
+    /* ลอยบน section */
+    top: -320px;
+    /* ชิดขอบบน */
+    left: 0;
+    /* ชิดขอบซ้าย */
+    width: 100%;
+    /* ปรับให้เต็ม section ตามต้องการ */
+    z-index: 2;
+    /* กำหนดลำดับชั้นถ้าต้องการอยู่บน/ล่าง content อื่น */
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-50px);
+    /* เริ่มสูงขึ้นเล็กน้อย */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.fishsec .melt-img.show {
+    opacity: 1;
+    transform: translateY(0);
+    /* กลับตำแหน่งปกติ */
+}
+
+.fishsec {
+    position: relative;
+    width: 100vw;
+    height: 6000px;
+    z-index: 4;
+}
+
+.fishsec h1 {
+    position: relative;
+    text-align: center;
+    top: -300px;
+    font-weight: bold;
+    font-size: 55px;
+    color: #09324E;
+    opacity: 0;
+}
+
+.fishsec h1.show {
+    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+}
+
+.littletext {
+    color: rgb(245, 102, 50);
+}
+
+.equipment {
+    font-size: 75px;
+    color: orangered;
+}
+
+.e-6 {
+    position: relative;
+    bottom: 500px;
+    width: 40vw;
+    left: 10%;
+    height: auto;
+    pointer-events: none;
+    transform: translateX(-200px);
+    /* เริ่มจากซ้ายไกลกว่าเดิม */
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.e-6.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.e-5 {
+    position: relative;
+    bottom: 3200px;
+    left: 50%;
+    width: 40vw;
+    height: auto;
+    pointer-events: none;
+    transform: translateX(200px);
+    /* เริ่มจากขวาไกลกว่าเดิม */
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.e-5.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.e-4 {
+    position: relative;
+    bottom: 2500px;
+    left: 10%;
+    width: 40vw;
+    height: auto;
+    pointer-events: none;
+    transform: translateX(-200px);
+    /* เริ่มจากซ้ายไกลกว่าเดิม */
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.e-4.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.e-3 {
+    position: relative;
+    bottom: 1800px;
+    left: 50%;
+    width: 40vw;
+    height: auto;
+    pointer-events: none;
+    transform: translateX(200px);
+    /* เริ่มจากขวาไกลกว่าเดิม */
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.e-3.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.e-2 {
+    position: relative;
+    bottom: 800px;
+    left: 10%;
+    width: 40vw;
+    height: auto;
+    pointer-events: none;
+    transform: translateX(-200px);
+    /* เริ่มจากซ้ายไกลกว่าเดิม */
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.e-2.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.e-1 {
+    position: relative;
+    bottom: 2200px;
+    left: 50%;
+    width: 40vw;
+    height: auto;
+    pointer-events: none;
+    transform: translateX(200px);
+    /* เริ่มจากขวาไกลกว่าเดิม */
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.e-1.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fishsec h2 {
+    position: relative;
+    bottom: 1900px;
+    color: #834929;
+    text-align: center;
+    font-size: 85px;
+    font-weight: bold;
+    opacity: 0;
+}
+
+.fishsec h2.show {
+    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+}
+
+.doublecode2 {
+    color: orangered;
+}
+
+.h2-color {
+    color: orangered;
+}
+
+.h2-color-2 {
+    color: orangered;
+}
+
+.last-bg {
+    position: relative;
+    left: -900px;
+    bottom: 3000px;
+    /* ให้ยังอยู่ใน flow ปกติ */
+    width: 200vw;
+    /* กว้าง 120% ของ viewport width */
+    max-width: none;
+    /* ป้องกัน browser บังคับ max-width */
+    height: auto;
+    /* รักษาสัดส่วน */
+    display: block;
+    /* ให้ block-level */
+    pointer-events: none;
+}
+
+.game-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 800px;
+    height: 380px;
+    margin: 100px auto;
+    top: -3000px;
+    background: linear-gradient(to top, #002B48, #559AC7, #CFECFF);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    bottom: 4500px;
+}
+
+.game-btn img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    /* ให้รูปอยู่ข้างบนกลาง */
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    /* ป้องกันรูปบังการกด */
+}
+
+.game-btn span {
+    position: relative;
+    font-size: 48px;
+    font-weight: bold;
+    color: #003663;
+    /* ดันข้อความลงใต้รูป */
+    line-height: 1.4;
+}
+
+.game-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-container {
+    background-image: url("assets/other/light.png"), linear-gradient(to top, #09324E 0%, #185F8E 50%, #ffffff 100%);
+    background-size: contain, cover;
+    background-repeat: no-repeat, no-repeat;
+    border-radius: 20px;
+    padding: 50px;
+    max-width: 900px;
+    width: 90%;
+    height: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: slideIn 0.4s ease;
+}
+
+.kong-color {
+    color: orangered;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #f47421;
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.close-btn:hover {
+    background: #d45a0a;
+    transform: rotate(90deg);
+}
+
+.quiz-content {
+    display: none;
+}
+
+.quiz-content.active {
+    display: block;
+}
+
+.intro-screen {
+    text-align: center;
+}
+
+.intro-screen h1 {
+    color: #ffffff;
+    font-size: 3em;
+    margin-bottom: 0px;
+}
+
+.intro-screen h1,
+p,
+.start-btn {
+    position: relative;
+    top: 250px;
+}
+
+.intro-screen p {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.start-btn {
+    background: orangered;
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    font-size: 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.question-screen {
+    text-align: center;
+}
+
+.progress-bar {
+    background: #e0e0e0;
+    height: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    height: 100%;
+    transition: width 0.3s;
+}
+
+.question-number {
+    color: #f47421;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.question-screen h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option-btn {
+    background: #f5f5f5;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 500;
+    color: #333;
+}
+
+.option-btn:hover {
+    background: #f0f0f0;
+    border-color: #667eea;
+    transform: translateX(10px);
+}
+
+.option-btn.selected {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+}
+
+.result-screen {
+    position: relative;
+    top: 50px;
+    text-align: center;
+    animation: popIn 0.6s ease;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fish-emoji {
+    font-size: 5em;
+    margin: 20px 0;
+}
+
+.result-screen h2 {
+    color: #ffffff;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.result-screen .you-are {
+    color: #2f7b9e;
+}
+
+.fish-description {
+    background: #f5f5f5;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 24px;
+}
+
+.fish-img {
+    width: 300px;
+    height: auto;
+    margin: 20px 250px;
+    filter: drop-shadow(0 0 10px #185F8E) drop-shadow(0 0 20px #185F8E);
+}
+
+.score-display {
+    position: relative;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.restart-btn {
+    background: #f47421;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.restart-btn:hover {
+    background: #d45a0a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(244, 116, 33, 0.4);
+}
+
+.youngmekongriver {
+    height: 5763px;
+    overflow: visible;
+}
+
+.youngmekongriver h1 {
+    position: relative;
+    font-size: 8rem;
+    /* ตัวใหญ่ */
+    font-weight: 700;
+    /* ตัวหนา */
+    text-align: center;
+    /* อยู่ตรงกลาง section */
+    margin: 0;
+    /* ลบ margin ดั้งเดิม */
+    color: #000000;
+    /* ต้องมี position เพื่อให้ top ทำงาน */
+    top: -15.5%;
+    /* เลื่อนลงจากตำแหน่งเดิม 10% */
+    z-index: 999;
+    opacity: 0;
+}
+
+.youngmekongriver h1.show {
+    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+}
+
+.youngmekongriver h1 span {
+    color: orangered;
+}
+
+.critical-image1 {
+    display: block;
+    margin: 20px auto;
+    width: 810px;
+    /* ปรับความกว้างให้เล็กลง */
+    height: 500px;
+    /* ปรับความสูงให้เล็กลง */
+    position: relative;
+    top: -24%;
+    /* เลื่อนลงตามต้องการ */
+    object-fit: cover;
+    border-radius: 10%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    transform: translateX(-200px);
+    /* เริ่มจากขวาไกลกว่าเดิม */
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.critical-image1.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.brownreportyoungmekongriver {
+    width: 44.2%;
+    height: 500px;
+    left: -1%;
+    background-color: orangered;
+    border-radius: 10%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    /* เพื่อจัด layer กับ image */
+    z-index: 1;
+    /* อยู่ด้านหลัง */
+    margin: -1875px auto 40px auto;
+    /* เลื่อนขึ้นมาซ้อนด้านหลัง image */
+}
+
+.infoyoungmekongriver1 {
+    display: flex;
+    justify-content: center;
+    /* จัดแนวนอน */
+    align-items: center;
+    /* จัดแนวตั้ง */
+    height: 500px;
+    /* กำหนดความสูง container */
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: -150px;
+    position: relative;
+    /* ต้องมีเพื่อให้ z-index ทำงาน */
+    z-index: 999;
+}
+
+.textyoungmekongriver1 {
+    font-size: 2.1rem;
+    color: #333333;
+    transform: translateX(200px);
+    /* เริ่มจากขวาไกลกว่าเดิม */
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.textyoungmekongriver1.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* ทำให้ span เด่น เช่น ชื่อคน */
+
+.textyoungmekongriver1 span {
+    font-size: 3rem;
+    color: orangered;
+    /* สีส้มเด่น */
+    font-weight: 700;
+    /* ตัวหนา */
+}
+
+.details1 {
+    /* จุดกึ่งกลางแนวนอน */
+    transform: translate(55%, -25%);
+    /* เลื่อนกลับครึ่งความกว้างและสูง */
+    width: 80%;
+    max-width: 900px;
+    padding: 25px;
+    background-color: #f0ae82;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    position: relative;
+    z-index: 999;
+}
+
+
+/* ปรับข้อความใน h3 */
+
+.details1 h3 {
+    transform: translate(3.5%, -25%);
+    font-size: 1.6rem;
+    color: #333333;
+    text-align: justify;
+    /* จัดข้อความชิดสองข้าง */
+    margin-bottom: 15px;
+    margin: 40px auto;
+    /* เว้นระยะระหว่าง h3 */
+    opacity: 0;
+}
+
+.details1 h3.show {
+    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+}
+
+.details1 h3:last-child {
+    margin-bottom: 0;
+    /* ป้องกัน margin ตัวสุดท้ายเกิน */
+}
+
+.critical-image2 {
+    display: block;
+    margin: 20px auto;
+    /* อยู่ตรงกลางแนวนอน */
+    width: 810px;
+    /* ปรับความกว้างให้เล็กลง */
+    height: 500px;
+    height: auto;
+    /* รักษาสัดส่วน */
+    position: relative;
+    z-index: 2;
+    /* อยู่ด้านบน */
+    border-radius: 10%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.critical-image2.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.brownreportyoungmekongriver1 {
+    width: 44.2%;
+    height: 540px;
+    left: -1%;
+    /* ปรับสูงตามต้องการ */
+    background-color: orangered;
+    border-radius: 10%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: -1100px auto 40px auto;
+    z-index: 1;
+}
+
+.infoyoungmekongriver2 {
+    display: flex;
+    justify-content: center;
+    /* จัดแนวนอน */
+    align-items: center;
+    /* จัดแนวตั้ง */
+    height: 500px;
+    /* กำหนดความสูง container */
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: -150px;
+}
+
+
+/* ข้อความ h2 */
+
+.textyoungmekongriver2 {
+    font-size: 2.2rem;
+    color: #333333;
+    margin: 0;
+    position: relative;
+    z-index: 999;
+    transform: translateX(200px);
+    /* เริ่มจากขวาไกลกว่าเดิม */
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.textyoungmekongriver2.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* ถ้ามี span ให้เด่น */
+
+.textyoungmekongriver2 span {
+    font-size: 3rem;
+    font-weight: 700;
+    color: orangered;
+}
+
+
+/* ถ้ามี span1 ให้เด่น (สร้าง style เพิ่ม) */
+
+.textyoungmekongriver2 span1 {
+    font-weight: 700;
+    color: orangered;
+    /* สีส้มเข้มสำหรับ span1 */
+}
+
+
+/* กล่องรายละเอียด */
+
+.details2 {
+    transform: translate(55%, -25%);
+    width: 90%;
+    max-width: 900px;
+    padding: 25px;
+    background-color: #f0ae82;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 999;
+}
+
+
+/* ข้อความ h3 */
+
+.details2 h3 {
+    transform: translate(3.5%, -5%);
+    font-size: 1.6rem;
+    color: #333333;
+    text-align: justify;
+    /* อ่านง่าย ชิดสองฝั่ง */
+    margin-bottom: 15px;
+    opacity: 0;
+}
+
+.details2 h3.show {
+    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+}
+
+.details2 h3:last-child {
+    margin-bottom: 0;
+}
+
+.critical-image3 {
+    margin: 20px auto;
+    /* อยู่ตรงกลางแนวนอน */
+    width: 810px;
+    /* ปรับความกว้างให้เล็กลง */
+    height: 500px;
+    height: auto;
+    /* รักษาสัดส่วน */
+    position: relative;
+    top: 0%;
+    /* เลื่อนลงตามต้องการ */
+    border-radius: 10%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 4;
+    transform: translateX(-200px);
+    /* เริ่มจากขวาไกลกว่าเดิม */
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.critical-image3.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.brownreportyoungmekongriver2 {
+    width: 44.2%;
+    height: 540px;
+    left: -1%;
+    background-color: orangered;
+    border-radius: 10%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: -2175px auto 40px auto;
+    /* เลื่อนขึ้นมาซ้อนด้านหลังภาพ */
+    position: relative;
+    z-index: 3;
+    /* อยู่ด้านหลังภาพ */
+}
+
+.infoyoungmekongriver3 {
+    display: flex;
+    justify-content: center;
+    /* จัดแนวนอน */
+    align-items: center;
+    /* จัดแนวตั้ง */
+    height: 500px;
+    /* กำหนดความสูง container */
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: -150px;
+}
+
+.textyoungmekongriver3 {
+    font-size: 2.2rem;
+    line-height: 1.6;
+    color: #333333;
+    margin: 0;
+    position: relative;
+    z-index: 999;
+    transform: translateX(200px);
+    /* เริ่มจากขวาไกลกว่าเดิม */
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.textyoungmekongriver3.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* span เด่น */
+
+.textyoungmekongriver3 span {
+    font-size: 3rem;
+    font-weight: 700;
+    color: orangered;
+}
+
+
+/* span1 เด่นต่างสี */
+
+.textyoungmekongriver3 span1 {
+    font-weight: 700;
+    color: orangered;
+}
+
+
+/* กล่องรายละเอียด */
+
+.details3 {
+    transform: translate(55%, -18%);
+    width: 90%;
+    max-width: 900px;
+    padding: 25px;
+    background-color: #f0ae82;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ข้อความ h3 */
+
+.details3 h3 {
+    transform: translate(3.5%, -5%);
+    font-size: 1.6rem;
+    color: #333333;
+    text-align: justify;
+    /* อ่านง่าย ชิดสองฝั่ง */
+    margin-bottom: 15px;
+    opacity: 0;
+}
+
+.details3 h3.show {
+    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+}
+
+.details3 h3:last-child {
+    margin-bottom: 0;
+}
+
+.refer {
+    width: 90%;
+    max-width: 900px;
+    /* จำกัดความกว้าง */
+    margin: 10px auto 40px auto;
+    /* margin-top = 10px เลื่อนขึ้น */
+    position: relative;
+    top: -100px;
+    /* เลื่อนขึ้นอีกเล็กน้อย */
+    position: relative;
+    z-index: 999;
+}
+
+.text-refer {
+    font-size: 1.7rem;
+    /* ตัวอักษรเล็กแต่ยังอ่านได้ */
+    line-height: 1.4;
+    /* เว้นบรรทัดอ่านง่าย */
+    color: #333333;
+    text-align: left;
+    /* ชิดขวา */
+    margin: 0;
+    /* ลบ margin เริ่มต้นของ h2 */
+}
+
+.f-1 {
+    position: relative;
+    top: -130px;
+    /* เลื่อนขึ้น 20px */
+    opacity: 0.5;
+    /* ค่า 0 = โปร่งใส, 1 = ชัดเต็ม */
+    z-index: 0;
+    opacity: 0;
+}
+
+.f-1.show {
+    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+}
+
+.f0-imgs2 {
+    width: 150vw;
+    height: 60vh;
+    /* กว้างเต็มหน้าจอ */
+    position: relative;
+    /* สำหรับจัดตำแหน่งภายใน */
+    z-index: 0;
+    opacity: 0.4;
+}
+
+.f0-imgs2 .f-2 {
+    width: 150%;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    left: -15%;
+    top: -600px;
+    z-index: 0;
+}
+
+.f0-imgs3 {
+    width: 150vw;
+    height: 60vh;
+    /* กว้างเต็มหน้าจอ */
+    position: relative;
+    /* สำหรับจัดตำแหน่งภายใน */
+    z-index: 0;
+    opacity: 0.4;
+}
+
+.f0-imgs3 .f-3 {
+    width: 150%;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    left: -15%;
+    top: -490px;
+    z-index: 0;
+}
+
+.f0-imgs4 {
+    width: 150vw;
+    height: 60vh;
+    /* กว้างเต็มหน้าจอ */
+    position: relative;
+    /* สำหรับจัดตำแหน่งภายใน */
+    z-index: 0;
+    opacity: 0.4;
+}
+
+.f0-imgs4 .f-4 {
+    width: 150%;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    left: -15%;
+    top: -665px;
+    z-index: 0;
+}
+
+.f-5 {
+    position: relative;
+    top: 125px;
+    /* เลื่อนขึ้น 20px */
+    opacity: 0.5;
+    /* ค่า 0 = โปร่งใส, 1 = ชัดเต็ม */
+    z-index: 1;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.f-5.show {
+    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+}
+
+
+/* --- Reference Section Styles (อ้างอิง) - Two-Tone Update --- */
+
+
+/* Parent container: Set to the darkest color and relative position for the pink bar */
+
+.reference-section {
+    background-color: #363636;
+    /* สีดำเข้มสำหรับ "ท้าย" section ตามคำขอ */
+    color: #ffffff;
+    padding: 0;
+    /* ควบคุม padding ใน sub-sections */
+    line-height: 1.6;
+    position: relative;
+}
+
+
+/* Wrapper for the content area (Medium Gray) */
+
+.ref-content-wrapper {
+    background-color: #6e6a6a;
+    /* สีเทาเข้มกลางสำหรับพื้นที่รายการอ้างอิงหลัก (ตามรูป image_4487ca.png) */
+    padding: 80px 0;
+    /* Add top/bottom padding here */
+    position: relative;
+    z-index: 999;
+}
+
+.ref-container {
+    max-width: 1000px;
+    margin: 0 0 0 40px;
+    /* Align to left with 40px left margin */
+    padding: 0;
+}
+
+
+/* หัวข้อ "อ้างอิง" */
+
+.ref-h1 {
+    font-family: Arial, sans-serif;
+    font-size: 4em;
+    font-weight: 400;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+    margin-top: 0;
+    color: #ffffff;
+}
+
+
+/* หัวข้อรอง "รวมอ้างอิง" */
+
+.ref-subtitle {
+    font-size: 2.2em;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+
+/* ข้อความ "นักข่าวพบเมือง Thai PBS" */
+
+.ref-description {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+}
+
+
+/* รายการอ้างอิงแต่ละรายการ */
+
+.ref-item {
+    font-size: 1.3em;
+    margin-bottom: 25px;
+    word-wrap: break-word;
+}
+
+
+/* ลิงก์ */
+
+.ref-item a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.ref-item a:hover {
+    text-decoration: underline;
+}
+
+
+/* เพื่อเน้นคำว่า "cr :" */
+
+.ref-label {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+
+/* General link styling to make all links clickable */
+
+a {
+    color: #ff7700;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+
+/* The very bottom dark area (tail) */
+
+.ref-dark-footer-area {
+    height: 300px;
+    /* กำหนดความสูงของพื้นที่สีดำเข้มที่ส่วนท้าย */
+    width: 100%;
+    /* Background color inherited from .reference-section (#363636) */
+}
