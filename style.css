@@ -1,3 +1,718 @@
+/* ============================================
+   MEDIA QUERIES FOR RESPONSIVE DESIGN
+   ============================================ */
+
+
+/* Tablet & Small Desktop (768px - 1024px) */
+
+@media (max-width: 1024px) {
+    .testContainer h1 {
+        font-size: 45px;
+    }
+    .testContainer h2 {
+        font-size: 42px;
+    }
+    .imageBox {
+        width: 100%;
+        max-width: 400px;
+        top: -15%;
+    }
+    .imageRow {
+        gap: 30px;
+    }
+    header {
+        height: 80vh;
+    }
+    .firstperson,
+    .secondperson {
+        width: 60%;
+        height: 100%;
+        top: 100px;
+    }
+    .secondperson {
+        left: 50%;
+    }
+    #test {
+        height: 1800px;
+    }
+    .critical-image1,
+    .critical-image2,
+    .critical-image3 {
+        width: 90%;
+        max-width: 600px;
+    }
+    .report-box,
+    .brownreport {
+        width: 90%;
+        max-width: 700px;
+    }
+    .may-text,
+    .may-card {
+        width: 90%;
+        max-width: 450px;
+    }
+    .details1,
+    .details2,
+    .details3 {
+        width: 90%;
+        transform: translate(0, 0);
+        margin: 20px auto;
+    }
+    .infoyoungmekongriver1,
+    .infoyoungmekongriver2,
+    .infoyoungmekongriver3 {
+        height: auto;
+        margin-top: 0;
+    }
+    .textyoungmekongriver1,
+    .textyoungmekongriver2,
+    .textyoungmekongriver3 {
+        font-size: 1.5rem;
+        transform: translateX(0);
+    }
+    .textyoungmekongriver1 span,
+    .textyoungmekongriver2 span,
+    .textyoungmekongriver3 span {
+        font-size: 2rem;
+    }
+    .e-1,
+    .e-2,
+    .e-3,
+    .e-4,
+    .e-5,
+    .e-6 {
+        width: 90%;
+        max-width: 450px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: auto;
+        position: relative;
+        margin: 30px auto;
+    }
+    .critical-image {
+        width: 90%;
+        max-width: 600px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 20px auto;
+    }
+    .may-content {
+        flex-direction: column;
+        gap: 40px;
+        top: 0;
+    }
+    .brownContainer1,
+    .brownContainer2 {
+        position: static;
+        width: 90%;
+        margin: 20px auto;
+        top: auto;
+        left: auto;
+    }
+    .orengeContainer1,
+    .orengeContainer2,
+    .orengeContainer3 {
+        width: 90%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 20px auto;
+        top: auto;
+    }
+    .page {
+        left: 50%;
+        transform: translateX(-50%);
+        position: relative;
+        top: auto;
+    }
+    .brownreportyoungmekongriver,
+    .brownreportyoungmekongriver1,
+    .brownreportyoungmekongriver2 {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 30px auto !important;
+        height: auto;
+    }
+    .game-btn {
+        width: 90%;
+        max-width: 600px;
+        height: auto;
+        top: auto;
+        bottom: auto;
+        margin: 50px auto;
+    }
+    .game-btn span {
+        font-size: 36px;
+    }
+    .modal-container {
+        width: 95%;
+        padding: 30px;
+        height: auto;
+        max-height: 90vh;
+    }
+    .modal-container h1 {
+        font-size: 2em;
+    }
+    .ref-h1 {
+        font-size: 3em;
+    }
+    .ref-subtitle {
+        font-size: 1.8em;
+    }
+    .ref-description {
+        font-size: 1.8em;
+    }
+    .ref-item {
+        font-size: 1.1em;
+    }
+    .report-box h2.report-title {
+        font-size: 28px;
+    }
+    .report-box h2.report-title span {
+        font-size: 32px;
+    }
+}
+
+
+/* Mobile: Large (500px - 768px) */
+
+@media (max-width: 768px) {
+    html,
+    body {
+        font-size: 14px;
+    }
+    header {
+        height: 70vh;
+    }
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+    .firstperson,
+    .secondperson {
+        display: none;
+    }
+    .testContainer h1 {
+        font-size: 32px;
+    }
+    .testContainer h2 {
+        font-size: 28px;
+    }
+    .testContainer {
+        gap: 40px;
+        height: 1200px;
+    }
+    .imageBox {
+        width: 100%;
+        max-width: 300px;
+        top: 0;
+    }
+    .imageBox p {
+        font-size: 28px;
+    }
+    .imageRow {
+        gap: 20px;
+        flex-direction: column;
+    }
+    #test {
+        height: 1400px;
+    }
+    .critical-image1,
+    .critical-image2,
+    .critical-image3 {
+        width: 95%;
+        max-width: 100%;
+        height: auto;
+    }
+    .report-box,
+    .brownreport {
+        width: 95%;
+        max-width: 100%;
+        padding: 20px;
+        margin: 20px auto !important;
+        height: auto;
+    }
+    .report-box h2.report-title {
+        font-size: 20px;
+    }
+    .report-box h2.report-title span {
+        font-size: 24px;
+    }
+    .report-box p.report-text {
+        font-size: 16px;
+    }
+    .may-text,
+    .may-card {
+        width: 95%;
+        max-width: 100%;
+        min-height: auto;
+        padding: 20px;
+    }
+    .may-content {
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        top: 0;
+    }
+    .details1,
+    .details2,
+    .details3 {
+        width: 95%;
+        max-width: 100%;
+        padding: 15px;
+        transform: translate(0, 0) !important;
+        margin: 15px auto !important;
+        top: auto !important;
+    }
+    .details1 h3,
+    .details2 h3,
+    .details3 h3 {
+        transform: translate(0, 0) !important;
+        font-size: 1.3rem;
+    }
+    .infoyoungmekongriver1,
+    .infoyoungmekongriver2,
+    .infoyoungmekongriver3 {
+        height: auto;
+        margin-top: 0;
+        padding: 20px;
+    }
+    .textyoungmekongriver1,
+    .textyoungmekongriver2,
+    .textyoungmekongriver3 {
+        font-size: 1.2rem;
+        transform: translateX(0);
+    }
+    .textyoungmekongriver1 span,
+    .textyoungmekongriver2 span,
+    .textyoungmekongriver3 span {
+        font-size: 1.5rem;
+    }
+    .e-1,
+    .e-2,
+    .e-3,
+    .e-4,
+    .e-5,
+    .e-6 {
+        width: 95%;
+        max-width: 100%;
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: translateX(0) !important;
+        margin: 20px auto;
+    }
+    .critical-image {
+        width: 95%;
+        max-width: 100%;
+        left: auto;
+        transform: translateX(0) !important;
+        margin: 15px auto;
+    }
+    .brownContainer1,
+    .brownContainer2 {
+        position: relative;
+        width: 95%;
+        height: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 15px auto;
+        top: auto;
+    }
+    .orengeContainer1,
+    .orengeContainer2,
+    .orengeContainer3 {
+        width: 95%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 15px auto;
+        top: auto;
+        height: auto;
+    }
+    .page {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        top: auto;
+        margin: auto;
+    }
+    .brownreportyoungmekongriver,
+    .brownreportyoungmekongriver1,
+    .brownreportyoungmekongriver2 {
+        width: 95%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 20px auto !important;
+        height: auto;
+    }
+    .game-btn {
+        width: 95%;
+        max-width: 100%;
+        height: auto;
+        padding: 20px;
+        margin: 30px auto;
+        top: auto;
+        bottom: auto;
+    }
+    .game-btn span {
+        font-size: 24px;
+    }
+    .game-btn img {
+        height: 150px;
+    }
+    .modal-container {
+        width: 95%;
+        padding: 20px;
+        height: auto;
+        max-height: 95vh;
+        background-size: contain;
+    }
+    .modal-container h1 {
+        font-size: 1.5em;
+    }
+    .close-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+    .ref-h1 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .ref-subtitle {
+        font-size: 1.3em;
+    }
+    .ref-description {
+        font-size: 1.3em;
+    }
+    .ref-item {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+    .ref-container {
+        margin: 0 20px;
+    }
+    .container {
+        width: 90vw;
+        max-width: 100vw;
+        right: 5vw;
+        bottom: 10px;
+    }
+    .container:not(.minimized) {
+        height: auto;
+        max-height: 60vh;
+    }
+    .fishsec {
+        height: auto;
+    }
+    .fishsec h1 {
+        font-size: 32px;
+    }
+    .fishsec h2 {
+        font-size: 48px;
+    }
+    .problem {
+        font-size: 28px;
+    }
+    .problem span {
+        font-size: 36px;
+    }
+    .youngmekongriver h1 {
+        font-size: 4rem;
+        top: auto;
+    }
+    .critical-text {
+        font-size: 18px;
+        top: 0;
+    }
+    .critical-text span2 {
+        font-size: 24px;
+    }
+    .vrisisVideo {
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90%;
+    }
+    .water-container {
+        height: 150px;
+    }
+    .wave {
+        height: 100px;
+    }
+    .pollution h1 {
+        font-size: 32px;
+    }
+    .fourthpage h1 {
+        font-size: 48px;
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+    .switch-slider {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    #abouthead {
+        font-size: 36px;
+    }
+    #p1 {
+        font-size: 18px;
+    }
+    .text-section h2 {
+        font-size: 24px;
+    }
+    .text-section p {
+        font-size: 14px;
+    }
+    .center-image {
+        height: 300px;
+    }
+    .image-container {
+        margin-left: 0;
+        transform: scale(1) !important;
+    }
+    .image-container.show {
+        transform: scale(1) !important;
+    }
+    .pin-btn1,
+    .pin-btn2,
+    .pin-btn3,
+    .pin-btn4,
+    .pin-btn5,
+    .pin-btn6,
+    .pin-btn7,
+    .pin-btn8 {
+        transform: scale(2) !important;
+    }
+}
+
+
+/* Mobile: Small (320px - 500px) */
+
+@media (max-width: 500px) {
+    html,
+    body {
+        font-size: 13px;
+    }
+    header {
+        height: 60vh;
+    }
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+    .testContainer {
+        gap: 30px;
+        height: 1000px;
+    }
+    .testContainer h1 {
+        font-size: 24px;
+    }
+    .testContainer h2 {
+        font-size: 20px;
+    }
+    .imageBox {
+        max-width: 100%;
+    }
+    .imageBox p {
+        font-size: 20px;
+    }
+    .critical-image1,
+    .critical-image2,
+    .critical-image3 {
+        width: 100%;
+        height: auto;
+    }
+    .report-box,
+    .brownreport {
+        width: 100%;
+        padding: 15px;
+        margin: 15px 0 !important;
+    }
+    .report-box h2.report-title {
+        font-size: 18px;
+    }
+    .may-text,
+    .may-card {
+        width: 100%;
+        padding: 15px;
+    }
+    .may-card iframe {
+        height: 200px;
+    }
+    .details1,
+    .details2,
+    .details3 {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0 !important;
+    }
+    .details1 h3,
+    .details2 h3,
+    .details3 h3 {
+        font-size: 1.1rem;
+    }
+    .textyoungmekongriver1,
+    .textyoungmekongriver2,
+    .textyoungmekongriver3 {
+        font-size: 1rem;
+    }
+    .textyoungmekongriver1 span,
+    .textyoungmekongriver2 span,
+    .textyoungmekongriver3 span {
+        font-size: 1.2rem;
+    }
+    .e-1,
+    .e-2,
+    .e-3,
+    .e-4,
+    .e-5,
+    .e-6 {
+        width: 100%;
+        margin: 15px 0;
+    }
+    .brownreportyoungmekongriver,
+    .brownreportyoungmekongriver1,
+    .brownreportyoungmekongriver2 {
+        width: 100%;
+        transform: translateX(0) !important;
+        margin: 15px 0 !important;
+        left: auto;
+    }
+    .game-btn {
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+    .game-btn span {
+        font-size: 18px;
+    }
+    .modal-container {
+        width: 100%;
+        padding: 15px;
+        margin: 0;
+        border-radius: 10px;
+    }
+    .modal-overlay {
+        padding: 10px;
+    }
+    .ref-h1 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    .ref-subtitle {
+        font-size: 1em;
+    }
+    .ref-description,
+    .ref-item {
+        font-size: 0.9em;
+    }
+    .ref-container {
+        margin: 0 15px;
+    }
+    .container {
+        width: calc(100vw - 20px);
+        right: 10px;
+        left: 10px;
+    }
+    .fishsec h1 {
+        font-size: 24px;
+    }
+    .fishsec h2 {
+        font-size: 32px;
+    }
+    .problem {
+        font-size: 20px;
+        top: auto;
+        position: relative;
+        left: auto;
+        transform: translateX(0);
+    }
+    .problem span {
+        font-size: 24px;
+    }
+    .youngmekongriver h1 {
+        font-size: 2.5rem;
+        top: auto;
+    }
+    .youngmekongriver h1 span {
+        display: block;
+    }
+    .critical-text {
+        font-size: 14px;
+    }
+    .critical-text span2 {
+        font-size: 18px;
+    }
+    .vrisisVideo {
+        max-width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 10px;
+    }
+    .vrisisVideo iframe {
+        max-width: 100%;
+    }
+    .water-container {
+        height: 100px;
+    }
+    .wave {
+        height: 80px;
+    }
+    .switch-slider {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    #map {
+        height: 600px;
+    }
+    #abouthead {
+        font-size: 28px;
+    }
+    .text-section {
+        padding: 30px 15px;
+    }
+    .text-section h2 {
+        font-size: 18px;
+    }
+    .text-section p {
+        font-size: 12px;
+    }
+    .center-image {
+        height: 200px;
+    }
+    .image-container {
+        margin: 20px auto;
+    }
+    .pin-btn1,
+    .pin-btn2,
+    .pin-btn3,
+    .pin-btn4,
+    .pin-btn5,
+    .pin-btn6,
+    .pin-btn7,
+    .pin-btn8 {
+        transform: scale(1.5) !important;
+        padding: 8px;
+        font-size: 16px;
+    }
+    .scroll-animate,
+    .scroll-left,
+    .scroll-right {
+        transition: all 0.5s ease-out;
+    }
+}
+
+
 /* =======================waterbottom-img
    General Styles
 ======================= */
