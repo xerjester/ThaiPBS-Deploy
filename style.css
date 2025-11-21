@@ -1,755 +1,4 @@
-/* ============================================
-   MEDIA QUERIES FOR RESPONSIVE DESIGN
-   ============================================ */
-
-
-/* Tablet & Small Desktop (768px - 1024px) */
-
-@media (max-width: 1024px) {
-    .testContainer h1 {
-        font-size: 45px;
-    }
-    .testContainer h2 {
-        font-size: 42px;
-    }
-    .imageBox {
-        width: 100%;
-        max-width: 400px;
-        top: -15%;
-    }
-    .imageRow {
-        gap: 30px;
-    }
-    header {
-        height: 80vh;
-    }
-    .firstperson,
-    .secondperson {
-        width: 60%;
-        height: 100%;
-        top: 100px;
-    }
-    .secondperson {
-        left: 50%;
-    }
-    #test {
-        height: 1800px;
-    }
-    .critical-image1,
-    .critical-image2,
-    .critical-image3 {
-        width: 90%;
-        max-width: 600px;
-    }
-    .report-box,
-    .brownreport {
-        width: 90%;
-        max-width: 700px;
-    }
-    .may-text,
-    .may-card {
-        width: 90%;
-        max-width: 450px;
-    }
-    .details1,
-    .details2,
-    .details3 {
-        width: 90%;
-        transform: translate(0, 0);
-        margin: 20px auto;
-    }
-    .infoyoungmekongriver1,
-    .infoyoungmekongriver2,
-    .infoyoungmekongriver3 {
-        height: auto;
-        margin-top: 0;
-    }
-    .textyoungmekongriver1,
-    .textyoungmekongriver2,
-    .textyoungmekongriver3 {
-        font-size: 1.5rem;
-        transform: translateX(0);
-    }
-    .textyoungmekongriver1 span,
-    .textyoungmekongriver2 span,
-    .textyoungmekongriver3 span {
-        font-size: 2rem;
-    }
-    .e-1,
-    .e-2,
-    .e-3,
-    .e-4,
-    .e-5,
-    .e-6 {
-        width: 90%;
-        max-width: 450px;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: auto;
-        position: relative;
-        margin: 30px auto;
-    }
-    .critical-image {
-        width: 90%;
-        max-width: 600px;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 20px auto;
-    }
-    .may-content {
-        flex-direction: column;
-        gap: 40px;
-        top: 0;
-    }
-    .brownContainer1,
-    .brownContainer2 {
-        position: static;
-        width: 90%;
-        margin: 20px auto;
-        top: auto;
-        left: auto;
-    }
-    .orengeContainer1,
-    .orengeContainer2,
-    .orengeContainer3 {
-        width: 90%;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 20px auto;
-        top: auto;
-    }
-    .page {
-        left: 50%;
-        transform: translateX(-50%);
-        position: relative;
-        top: auto;
-    }
-    .brownreportyoungmekongriver,
-    .brownreportyoungmekongriver1,
-    .brownreportyoungmekongriver2 {
-        width: 90%;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 30px auto !important;
-        height: auto;
-    }
-    .game-btn {
-        width: 90%;
-        max-width: 600px;
-        height: auto;
-        top: auto;
-        bottom: auto;
-        margin: 50px auto;
-    }
-    .game-btn span {
-        font-size: 36px;
-    }
-    .modal-container {
-        width: 95%;
-        padding: 30px;
-        height: auto;
-        max-height: 90vh;
-    }
-    .modal-container h1 {
-        font-size: 2em;
-    }
-    @media (max-width: 500px) {
-        .modal-container h1 {
-            font-size: 1.8em;
-        }
-    }
-    .ref-h1 {
-        font-size: 3em;
-    }
-    .ref-subtitle {
-        font-size: 1.8em;
-    }
-    .ref-description {
-        font-size: 1.8em;
-    }
-    .ref-item {
-        font-size: 1.1em;
-    }
-    .report-box h2.report-title {
-        font-size: 28px;
-    }
-    .report-box h2.report-title span {
-        font-size: 32px;
-    }
-}
-
-
-/* Mobile: Large (500px - 768px) */
-
-@media (max-width: 768px) {
-    html,
-    body {
-        font-size: 14px;
-    }
-    header {
-        height: 70vh;
-    }
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-    .hero-text p {
-        font-size: 1rem;
-    }
-    .firstperson,
-    .secondperson {
-        display: none;
-    }
-    .testContainer h1 {
-        font-size: 32px;
-    }
-    .testContainer h2 {
-        font-size: 28px;
-    }
-    .testContainer {
-        gap: 40px;
-        height: 1200px;
-    }
-    .imageBox {
-        width: 100%;
-        max-width: 300px;
-        top: 0;
-    }
-    .imageBox p {
-        font-size: 28px;
-    }
-    .imageRow {
-        gap: 20px;
-        flex-direction: column;
-    }
-    #test {
-        height: 1400px;
-    }
-    .critical-image1,
-    .critical-image2,
-    .critical-image3 {
-        width: 95%;
-        max-width: 100%;
-        height: auto;
-    }
-    .report-box,
-    .brownreport {
-        width: 95%;
-        max-width: 100%;
-        padding: 20px;
-        margin: 20px auto !important;
-        height: auto;
-    }
-    .report-box h2.report-title {
-        font-size: 20px;
-    }
-    .report-box h2.report-title span {
-        font-size: 24px;
-    }
-    .report-box p.report-text {
-        font-size: 16px;
-    }
-    .may-text,
-    .may-card {
-        width: 95%;
-        max-width: 100%;
-        min-height: auto;
-        padding: 20px;
-    }
-    .may-content {
-        flex-direction: column;
-        gap: 20px;
-        position: relative;
-        top: 0;
-    }
-    .details1,
-    .details2,
-    .details3 {
-        width: 95%;
-        max-width: 100%;
-        padding: 15px;
-        transform: translate(0, 0) !important;
-        margin: 15px auto !important;
-        top: auto !important;
-    }
-    .details1 h3,
-    .details2 h3,
-    .details3 h3 {
-        transform: translate(0, 0) !important;
-        font-size: 1.3rem;
-    }
-    .infoyoungmekongriver1,
-    .infoyoungmekongriver2,
-    .infoyoungmekongriver3 {
-        height: auto;
-        margin-top: 0;
-        padding: 20px;
-    }
-    .textyoungmekongriver1,
-    .textyoungmekongriver2,
-    .textyoungmekongriver3 {
-        font-size: 1.2rem;
-        transform: translateX(0);
-    }
-    .textyoungmekongriver1 span,
-    .textyoungmekongriver2 span,
-    .textyoungmekongriver3 span {
-        font-size: 1.5rem;
-    }
-    .e-1,
-    .e-2,
-    .e-3,
-    .e-4,
-    .e-5,
-    .e-6 {
-        width: 95%;
-        max-width: 100%;
-        position: relative;
-        left: auto;
-        bottom: auto;
-        transform: translateX(0) !important;
-        margin: 20px auto;
-    }
-    .critical-image {
-        width: 95%;
-        max-width: 100%;
-        left: auto;
-        transform: translateX(0) !important;
-        margin: 15px auto;
-    }
-    .brownContainer1,
-    .brownContainer2 {
-        position: relative;
-        width: 95%;
-        height: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 15px auto;
-        top: auto;
-    }
-    .orengeContainer1,
-    .orengeContainer2,
-    .orengeContainer3 {
-        width: 95%;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 15px auto;
-        top: auto;
-        height: auto;
-    }
-    .page {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 95%;
-        top: auto;
-        margin: auto;
-    }
-    .brownreportyoungmekongriver,
-    .brownreportyoungmekongriver1,
-    .brownreportyoungmekongriver2 {
-        width: 95%;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 20px auto !important;
-        height: auto;
-    }
-    .game-btn {
-        width: 95%;
-        max-width: 100%;
-        height: auto;
-        padding: 20px;
-        margin: 30px auto;
-        top: auto;
-        bottom: auto;
-    }
-    .game-btn span {
-        font-size: 24px;
-    }
-    .game-btn img {
-        height: 150px;
-    }
-    .modal-container {
-        width: 95%;
-        padding: 20px;
-        height: auto;
-        max-height: 95vh;
-        background-size: contain;
-    }
-    .modal-container h1 {
-        font-size: 1.5em;
-    }
-    .close-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
-    }
-    .ref-h1 {
-        font-size: 2em;
-        margin-bottom: 30px;
-    }
-    .ref-subtitle {
-        font-size: 1.3em;
-    }
-    .ref-description {
-        font-size: 1.3em;
-    }
-    .ref-item {
-        font-size: 1em;
-        margin-bottom: 15px;
-    }
-    .ref-container {
-        margin: 0 20px;
-    }
-    .container {
-        width: 90vw;
-        max-width: 100vw;
-        right: 5vw;
-        bottom: 10px;
-    }
-    .container:not(.minimized) {
-        height: auto;
-        max-height: 60vh;
-    }
-    .fishsec {
-        height: auto;
-    }
-    .fishsec h1 {
-        font-size: 32px;
-    }
-    .fishsec h2 {
-        font-size: 48px;
-    }
-    .problem {
-        font-size: 28px;
-    }
-    .problem span {
-        font-size: 36px;
-    }
-    .youngmekongriver h1 {
-        font-size: 4rem;
-        top: auto;
-    }
-    .critical-text {
-        font-size: 18px;
-        top: 0;
-    }
-    .critical-text span2 {
-        font-size: 24px;
-    }
-    .vrisisVideo {
-        left: 50%;
-        transform: translateX(-50%);
-        max-width: 90%;
-    }
-    .water-container {
-        height: 150px;
-    }
-    .wave {
-        height: 100px;
-    }
-    .pollution h1 {
-        font-size: 32px;
-    }
-    .fourthpage h1 {
-        font-size: 48px;
-        position: relative;
-        left: auto;
-        top: auto;
-    }
-    .switch-slider {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-    #abouthead {
-        font-size: 36px;
-    }
-    #p1 {
-        font-size: 18px;
-    }
-    .text-section h2 {
-        font-size: 24px;
-    }
-    .text-section p {
-        font-size: 14px;
-    }
-    .center-image {
-        height: 300px;
-    }
-    .image-container {
-        margin-left: 0;
-        transform: scale(1) !important;
-    }
-    .image-container.show {
-        transform: scale(1) !important;
-    }
-    .pin-btn1,
-    .pin-btn2,
-    .pin-btn3,
-    .pin-btn4,
-    .pin-btn5,
-    .pin-btn6,
-    .pin-btn7,
-    .pin-btn8 {
-        transform: scale(2) !important;
-    }
-}
-
-
-/* Mobile: Small (320px - 500px) */
-
-@media (max-width: 500px) {
-    html,
-    body {
-        font-size: 13px;
-    }
-    header {
-        height: 60vh;
-    }
-    .hero-text h1 {
-        font-size: 1.5rem;
-    }
-    .hero-text p {
-        font-size: 0.9rem;
-    }
-    .testContainer {
-        gap: 30px;
-        height: 1000px;
-    }
-    .testContainer h1 {
-        font-size: 24px;
-    }
-    .testContainer h2 {
-        font-size: 20px;
-    }
-    .imageBox {
-        max-width: 100%;
-    }
-    .imageBox p {
-        font-size: 20px;
-    }
-    .critical-image1,
-    .critical-image2,
-    .critical-image3 {
-        width: 100%;
-        height: auto;
-    }
-    .report-box,
-    .brownreport {
-        width: 100%;
-        padding: 15px;
-        margin: 15px 0 !important;
-    }
-    .report-box h2.report-title {
-        font-size: 18px;
-    }
-    .may-text,
-    .may-card {
-        width: 100%;
-        padding: 15px;
-    }
-    .may-card iframe {
-        height: 200px;
-    }
-    .details1,
-    .details2,
-    .details3 {
-        width: 100%;
-        padding: 12px;
-        margin: 10px 0 !important;
-    }
-    .details1 h3,
-    .details2 h3,
-    .details3 h3 {
-        font-size: 1.1rem;
-    }
-    .textyoungmekongriver1,
-    .textyoungmekongriver2,
-    .textyoungmekongriver3 {
-        font-size: 1rem;
-    }
-    .textyoungmekongriver1 span,
-    .textyoungmekongriver2 span,
-    .textyoungmekongriver3 span {
-        font-size: 1.2rem;
-    }
-    .e-1,
-    .e-2,
-    .e-3,
-    .e-4,
-    .e-5,
-    .e-6 {
-        width: 100%;
-        margin: 15px 0;
-    }
-    .brownreportyoungmekongriver,
-    .brownreportyoungmekongriver1,
-    .brownreportyoungmekongriver2 {
-        width: 100%;
-        transform: translateX(0) !important;
-        margin: 15px 0 !important;
-        left: auto;
-    }
-    .game-btn {
-        width: 100%;
-        height: auto;
-        margin: 20px 0;
-    }
-    .game-btn span {
-        font-size: 18px;
-    }
-    .modal-container {
-        width: 100%;
-        padding: 15px;
-        margin: 0;
-        border-radius: 10px;
-    }
-    .modal-overlay {
-        padding: 10px;
-    }
-    .ref-h1 {
-        font-size: 1.5em;
-        margin-bottom: 20px;
-    }
-    .ref-subtitle {
-        font-size: 1em;
-    }
-    .ref-description,
-    .ref-item {
-        font-size: 0.9em;
-    }
-    .ref-container {
-        margin: 0 15px;
-    }
-    .container {
-        width: calc(100vw - 20px);
-        right: 10px;
-        left: 10px;
-    }
-    .fishsec h1 {
-        font-size: 24px;
-    }
-    .fishsec h2 {
-        font-size: 32px;
-    }
-    .problem {
-        font-size: 20px;
-        top: auto;
-        position: relative;
-        left: auto;
-        transform: translateX(0);
-    }
-    .problem span {
-        font-size: 24px;
-    }
-    .youngmekongriver h1 {
-        font-size: 2.5rem;
-        top: auto;
-    }
-    .youngmekongriver h1 span {
-        display: block;
-    }
-    .critical-text {
-        font-size: 14px;
-    }
-    .critical-text span2 {
-        font-size: 18px;
-    }
-    .vrisisVideo {
-        max-width: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 0 10px;
-    }
-    .vrisisVideo iframe {
-        max-width: 100%;
-    }
-    .water-container {
-        height: 100px;
-    }
-    .wave {
-        height: 80px;
-    }
-    .switch-slider {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
-    #map {
-        height: 600px;
-    }
-    #abouthead {
-        font-size: 28px;
-    }
-    .text-section {
-        padding: 30px 15px;
-    }
-    .text-section h2 {
-        font-size: 18px;
-    }
-    .text-section p {
-        font-size: 12px;
-    }
-    .center-image {
-        height: 200px;
-    }
-    .image-container {
-        margin: 20px auto;
-    }
-    .pin-btn1,
-    .pin-btn2,
-    .pin-btn3,
-    .pin-btn4,
-    .pin-btn5,
-    .pin-btn6,
-    .pin-btn7,
-    .pin-btn8 {
-        transform: scale(1.5) !important;
-        padding: 8px;
-        font-size: 16px;
-    }
-    .scroll-animate,
-    .scroll-left,
-    .scroll-right {
-        transition: all 0.5s ease-out;
-    }
-    /* ปรับ Modal */
-    .modal-container {
-        width: 95%;
-        padding: 15px;
-        max-height: 95vh;
-    }
-    /* ปรับ Game Button */
-    .game-btn {
-        width: 95%;
-        height: auto;
-        padding: 15px;
-    }
-    .game-btn span {
-        font-size: 16px;
-    }
-    /* ปรับ Fish Image */
-    .fish-img {
-        width: 120px;
-        margin: 10px 0;
-    }
-    /* ปรับ Absolute Elements */
-    .layer11 {
-        width: 25%;
-    }
-    /* ปรับ Critical Images */
-    .critical-image1,
-    .critical-image2,
-    .critical-image3 {
-        width: 100%;
-        max-width: none;
-    }
-}
-
-
-/* =======================waterbottom-img
+/* =======================
    General Styles
 ======================= */
 
@@ -1051,6 +300,7 @@ header.dark::before {
     /* เพิ่มได้ถ้าอยากให้รูปใหญ่สุดได้ถึง 400px */
     position: relative;
     top: -27%;
+    transform: scale(1.2);
 }
 
 .imageBox img {
@@ -1657,23 +907,20 @@ header.dark+section#about .bg-white {
 }
 
 .water-container {
-    position: relative;
-    width: 100vw;
-    height: 250px;
-    /* ปรับสูงต่ำได้ตามต้องการ */
+    position: absolute;
+    width: 100%;
+    height: clamp(120px, 20vw, 350px);
+    /* Min: 120px | Preferred: 20% viewport | Max: 350px */
     overflow: visible;
     z-index: 3;
     opacity: 0;
-    transform: translateY(100px);
-    /* เริ่มต้นเลื่อนลงเล็กน้อย */
+    bottom: 50%;
     transition: opacity 1s ease, transform 2s ease;
-    /* ค่อยๆ เฟดและเลื่อนขึ้น */
     pointer-events: none;
 }
 
 .water-container.show {
     opacity: 1;
-    transform: translateY(0);
     /* เลื่อนขึ้นมาตำแหน่งเดิม */
 }
 
@@ -1736,14 +983,14 @@ header.dark+section#about .bg-white {
 .ground {
     position: absolute;
     z-index: 2;
-    width: 100vw;
-    top: 2850px;
-    /* ระยะจากด้านบน */
-    /* เริ่มจากกึ่งกลางหน้าจอ */
-    /* เลื่อนกลับครึ่งความกว้าง */
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: -200px;
     opacity: 0;
-    transition: 1s;
+    transition: opacity 1s ease;
     pointer-events: none;
+    background: transparent;
 }
 
 .ground.show {
@@ -2702,10 +1949,14 @@ body.dark .image-container .pin-btn8::before {
 .grass-layer1 {
     position: absolute;
     z-index: 3;
-    top: 3200px;
-    width: 20vw;
-    /* ขนาด GIF */
+    bottom: clamp(250px, -8vh, -150px);
+    /* ← Responsive top */
+    left: clamp(10px, 2%, 80px);
+    /* ← ระบุตำแหน่ง */
+    width: clamp(120px, 25vw, 400px);
+    /* ← Responsive width */
     height: auto;
+    /* ← keep aspect ratio */
     transform: rotate(-10deg);
     transition: opacity 0.6s ease-in-out;
     pointer-events: none;
@@ -2715,11 +1966,14 @@ body.dark .image-container .pin-btn8::before {
 .grass-layer2 {
     position: absolute;
     z-index: 0;
-    top: 3050px;
-    left: 100px;
-    width: 35vw;
-    /* ขนาด GIF */
+    bottom: clamp(230px, -8vh, -150px);
+    /* ← Responsive top */
+    left: clamp(150px, 2%, 80px);
+    /* ← ระบุตำแหน่ง */
+    width: clamp(620px, 25vw, 400px);
+    /* ← Responsive width */
     height: auto;
+    /* ← keep aspect ratio */
     transform: rotate(-10deg);
     transition: opacity 0.6s ease-in-out;
     pointer-events: none;
@@ -2729,66 +1983,83 @@ body.dark .image-container .pin-btn8::before {
 .grass-layer3 {
     position: absolute;
     z-index: 3;
-    top: 3125px;
-    left: 30%;
-    width: 25vw;
-    /* ขนาด GIF */
+    bottom: clamp(270px, -8vh, -150px);
+    /* ← Responsive top */
+    left: clamp(500px, 2%, 80px);
+    /* ← ระบุตำแหน่ง */
+    width: clamp(420px, 25vw, 400px);
+    /* ← Responsive width */
     height: auto;
+    /* ← keep aspect ratio */
+    transform: rotate(-10deg);
     transition: opacity 0.6s ease-in-out;
     pointer-events: none;
-    animation: rotate 1.25s ease-in-out infinite alternate;
+    animation: rotate 0.5s ease-in-out infinite alternate;
 }
 
 .grass-layer4 {
     position: absolute;
     z-index: 3;
-    top: 3175px;
-    left: 35%;
-    width: 25vw;
-    /* ขนาด GIF */
+    bottom: clamp(270px, -8vh, -150px);
+    /* ← Responsive top */
+    left: clamp(625px, 2%, 80px);
+    /* ← ระบุตำแหน่ง */
+    width: clamp(420px, 25vw, 400px);
+    /* ← Responsive width */
     height: auto;
-    transform: rotate(10deg);
+    /* ← keep aspect ratio */
+    transform: rotate(20deg);
     transition: opacity 0.6s ease-in-out;
     pointer-events: none;
-    animation: rotate 1s ease-in-out infinite alternate;
+    animation: rotate 0.7s ease-in-out infinite alternate;
 }
 
 .grass-layer5 {
     position: absolute;
     z-index: 0;
-    top: 3050px;
-    left: 700px;
-    width: 35vw;
-    /* ขนาด GIF */
+    bottom: clamp(200px, -8vh, -150px);
+    /* ← Responsive top */
+    left: clamp(650px, 2%, 80px);
+    /* ← ระบุตำแหน่ง */
+    width: clamp(820px, 25vw, 400px);
+    /* ← Responsive width */
     height: auto;
+    /* ← keep aspect ratio */
+    transform: rotate(20deg);
     transition: opacity 0.6s ease-in-out;
     pointer-events: none;
-    animation: rotate 1s ease-in-out infinite alternate;
+    animation: rotate 2s ease-in-out infinite alternate;
 }
 
 .grass-layer6 {
     position: absolute;
     z-index: 2;
-    top: 3210px;
-    left: 875px;
-    width: 25vw;
-    /* ขนาด GIF */
+    bottom: clamp(280px, -8vh, -150px);
+    /* ← Responsive top */
+    left: clamp(800px, 2%, 80px);
+    /* ← ระบุตำแหน่ง */
+    width: clamp(320px, 25vw, 400px);
+    /* ← Responsive width */
     height: auto;
-    transform: rotate(-15deg);
+    /* ← keep aspect ratio */
+    transform: rotate(20deg);
     transition: opacity 0.6s ease-in-out;
     pointer-events: none;
-    animation: rotate 1.75s ease-in-out infinite alternate;
+    animation: rotate 0.9s ease-in-out infinite alternate;
 }
 
 .grass-layer7 {
     position: absolute;
     z-index: 2;
-    top: 3200px;
-    left: 1100px;
-    width: 25vw;
-    /* ขนาด GIF */
+    bottom: clamp(220px, -8vh, -150px);
+    /* ← Responsive top */
+    left: clamp(1000px, 2%, 80px);
+    /* ← ระบุตำแหน่ง */
+    width: clamp(500px, 25vw, 400px);
+    /* ← Responsive width */
     height: auto;
-    transform: rotate(15deg);
+    /* ← keep aspect ratio */
+    transform: rotate(20deg);
     transition: opacity 0.6s ease-in-out;
     pointer-events: none;
     animation: rotate 1s ease-in-out infinite alternate;
@@ -2797,119 +2068,62 @@ body.dark .image-container .pin-btn8::before {
 .grass-layer8 {
     position: absolute;
     z-index: 0;
-    top: 3075px;
-    left: 1100px;
-    width: 35vw;
-    /* ขนาด GIF */
+    bottom: clamp(100px, -8vh, -150px);
+    /* ← Responsive top */
+    left: clamp(1000px, 2%, 80px);
+    /* ← ระบุตำแหน่ง */
+    width: clamp(1000px, 25vw, 400px);
+    /* ← Responsive width */
     height: auto;
+    /* ← keep aspect ratio */
+    transform: rotate(20deg);
     transition: opacity 0.6s ease-in-out;
     pointer-events: none;
-    animation: rotate 1s ease-in-out infinite alternate;
+    animation: rotate 2.3s ease-in-out infinite alternate;
 }
 
 .grass-layer9 {
     position: absolute;
     z-index: 2;
-    top: 3100px;
-    left: 1400px;
-    width: 35vw;
-    /* ขนาด GIF */
+    bottom: clamp(120px, -8vh, -150px);
+    /* ← Responsive top */
+    left: clamp(1300px, 2%, 80px);
+    /* ← ระบุตำแหน่ง */
+    width: clamp(800px, 25vw, 400px);
+    /* ← Responsive width */
     height: auto;
+    /* ← keep aspect ratio */
+    transform: rotate(20deg);
     transition: opacity 0.6s ease-in-out;
     pointer-events: none;
-    animation: rotate 1s ease-in-out infinite alternate;
+    animation: rotate 1.5s ease-in-out infinite alternate;
 }
 
 
 /* เรือ */
 
+#water-ship {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+}
+
 .layer11 {
     opacity: 0;
     position: absolute;
-    left: 70%;
-    top: 352%;
-    width: 20%;
-    height: 30%;
+    right: 10%;
+    /* ← ใช้ right */
+    bottom: 100px;
+    /* ← px ไม่ใช่ % */
+    width: clamp(150px, 22vw, 400px);
+    height: clamp(120px, 28vw, 300px);
     z-index: 12;
     animation: float 2s ease-in-out infinite alternate;
     transition: opacity 1s ease-in-out;
-    /* fade in ลื่น */
-}
-
-
-/* ✅ แก้ไข */
-
-@media (max-width: 768px) {
-    .layer11 {
-        position: relative;
-        left: auto;
-        top: auto;
-    }
-}
-
-
-/* ✅ แก้ไข */
-
-@media (max-width: 768px) {
-    .background-grass {
-        width: 150vw;
-    }
-}
-
-@media (max-width: 500px) {
-    .background-grass {
-        width: 120vw;
-    }
-}
-
-
-/* เพิ่มขนาด touch target */
-
-@media (max-width: 768px) {
-    .pin-btn1,
-    .pin-btn2,
-    .pin-btn3,
-    .pin-btn4,
-    .pin-btn5,
-    .pin-btn6,
-    .pin-btn7,
-    .pin-btn8 {
-        min-width: 44px;
-        min-height: 44px;
-    }
-    .game-btn span {
-        font-size: 18px;
-        /* ลดจาก 48px */
-    }
-}
-
-@media (max-width: 500px) {
-    .may-text,
-    .may-card {
-        padding: 15px;
-        /* ลด padding */
-    }
-    .report-box {
-        padding: 15px 20px;
-        /* ลด padding */
-    }
-}
-
-@media (max-width: 500px) {
-    .critical-image {
-        width: 100%;
-        max-width: none;
-    }
-    .fish-img {
-        width: 150px;
-        /* ลดจาก 300px */
-        margin: 10px auto;
-    }
 }
 
 .layer11.show {
     opacity: 1;
-    /* animation float ยังคงทำงานอยู่ ไม่ต้องใส่ซ้ำ */
 }
 
 @keyframes float {
@@ -2995,10 +2209,15 @@ img[alt="ship-bg"] {
 }
 
 img[alt="waterbottom-img"] {
-    transition: all 1s ease-out;
-    transform: translateX(-1000px);
+    width: 100%;
+    max-width: 100%;
     position: absolute;
-    top: 8600px;
+    bottom: -8700px;
+    /* อยู่ด้านล่างของ section */
+    left: 0;
+    transition: all 1s ease-out;
+    transform: translateX(-20vw);
+    /* ใช้ vw แทน px */
     z-index: 2;
     pointer-events: none;
     opacity: 0;
@@ -3375,21 +2594,20 @@ img[alt="waterbottom-img"].show {
 
 .problem {
     position: absolute;
-    transform: translateX(-50%);
     left: 50%;
-    top: 1330%;
-    font-size: 50px;
+    transform: translateX(-50%);
+    top: 12550px;
+    /* ← Base top */
+    font-size: clamp(24px, 5vw, 50px);
+    /* ← Responsive font */
     font-weight: bold;
-    /* ขนาดตัวอักษร h3 */
     text-align: center;
-    /* จัดกลาง */
     color: #834929;
-    /* สีข้อความหลัก */
     line-height: 1.4;
-    /* เว้นบรรทัดให้พอดี */
     z-index: 5;
-    /* เว้นระยะจาก element ถัดไป */
     opacity: 0;
+    width: 90%;
+    max-width: 800px;
 }
 
 .problem.show {
@@ -3407,7 +2625,7 @@ img[alt="waterbottom-img"].show {
 .critical-image {
     position: absolute;
     display: block;
-    top: 1363%;
+    top: 12800px;
     left: 20%;
     margin: 50px auto;
     max-width: 60%;
@@ -4487,15 +3705,23 @@ p,
     z-index: 0;
 }
 
-.f-5 {
+.f0-5 {
     position: relative;
-    top: 125px;
-    /* เลื่อนขึ้น 20px */
-    opacity: 0.5;
-    /* ค่า 0 = โปร่งใส, 1 = ชัดเต็ม */
-    z-index: 1;
+    width: 100%;
     overflow: hidden;
-    opacity: 0;
+}
+
+.f-5 {
+    bottom: -100px;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    position: relative;
+    transform: translateY(8vh);
+    /* เดิม top:125px → responsive */
+    opacity: 0.5;
+    /* ตามที่คุณตั้งไว้ */
+    z-index: 1;
 }
 
 .f-5.show {
