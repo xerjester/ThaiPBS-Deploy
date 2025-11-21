@@ -318,7 +318,7 @@ header.dark::before {
 @keyframes fadeUp2 {
     0% {
         opacity: 0;
-        scale: 0.5;
+        scale: 0.4;
     }
     100% {
         opacity: 1;
@@ -350,7 +350,7 @@ header.dark::before {
 .imageBox img.show,
 .imageBox p.show {
     opacity: 1;
-    animation: fadeUp2 0.5s ease-out forwards;
+    animation: fadeUp2 0.2s ease-out forwards;
 }
 
 
@@ -2186,19 +2186,20 @@ img[alt="img-left"] {
 }
 
 img[alt="img-right"] {
-    right: 0%;
+    right: -10%;
     position: absolute;
     top: 6500px;
     z-index: 4;
     opacity: 0;
+    width: 40%;
 }
 
 img[alt="img-left"].show {
-    animation: slideIn 1s ease-in-out 500ms forwards;
+    animation: slideIn 0.4s ease-in-out 500ms forwards;
 }
 
 img[alt="img-right"].show {
-    animation: slideInRight 1s ease-in-out 1000ms forwards;
+    animation: slideInRight 0.4s ease-in-out 1000ms forwards;
 }
 
 img[alt="ship-bg"] {
@@ -2215,7 +2216,7 @@ img[alt="waterbottom-img"] {
     bottom: -8700px;
     /* อยู่ด้านล่างของ section */
     left: 0;
-    transition: all 1s ease-out;
+    transition: all 0.4s ease-out;
     transform: translateX(-20vw);
     /* ใช้ vw แทน px */
     z-index: 2;
@@ -2247,7 +2248,7 @@ img[alt="waterbottom-img"].show {
 }
 
 .fourthpage h1.show {
-    animation: fadeUp2 1s ease-in-out 1s forwards;
+    animation: fadeUp2 0.2s ease-in-out 0.2s forwards;
 }
 
 .fourthpage span {
@@ -2326,7 +2327,7 @@ img[alt="waterbottom-img"].show {
 }
 
 .May.report h1.show {
-    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+    animation: fadeUp2 0.2s ease-in-out 0.2s forwards;
 }
 
 
@@ -2361,9 +2362,9 @@ img[alt="waterbottom-img"].show {
     z-index: 11;
     position: relative;
     top: -565px;
-    transform: translateY(50px);
-    /* เริ่มจากด้านล่าง */
-    transition: opacity 2s ease-out, transform 2s ease-out;
+    transform: translateX(-100px);
+    /* เริ่มจากซ้าย */
+    transition: opacity 1s ease-out, transform 1s ease-out;
     opacity: 0;
 }
 
@@ -2396,9 +2397,9 @@ img[alt="waterbottom-img"].show {
     z-index: 999;
     position: relative;
     top: -570px;
-    transform: translateY(50px);
-    /* เริ่มจากด้านล่าง */
-    transition: opacity 2s ease-out, transform 2s ease-out;
+    transform: translateX(-100px);
+    /* เริ่มจากซ้าย */
+    transition: opacity 1s ease-out, transform 1s ease-out;
     opacity: 0;
 }
 
@@ -2438,14 +2439,12 @@ img[alt="waterbottom-img"].show {
     height: 72%;
     background-color: #834929;
     z-index: 10;
-    transform: translateY(50px);
-    /* เริ่มจากด้านล่าง */
-    transition: opacity 2s ease-out, transform 2s ease-out;
+    transition: 2s;
     opacity: 0;
 }
 
 .brownContainer1.show {
-    animation: fadeUp2 1s ease-in-out 1s forwards;
+    opacity: 1;
 }
 
 .brownContainer2 {
@@ -2457,14 +2456,12 @@ img[alt="waterbottom-img"].show {
     height: 96%;
     background-color: #834929;
     z-index: 10;
-    transform: translateY(50px);
-    /* เริ่มจากด้านล่าง */
-    transition: opacity 2s ease-out, transform 2s ease-out;
+    transition: 2s;
     opacity: 0;
 }
 
 .brownContainer2.show {
-    animation: fadeUp2 1s ease-in-out 1s forwards;
+    opacity: 1;
 }
 
 
@@ -2495,14 +2492,13 @@ img[alt="waterbottom-img"].show {
 }
 
 .pollution h1.show {
-    animation: fadeUp2 1s ease-in-out 1s forwards;
+    animation: fadeUp2 0.2s ease-in-out 0.2s forwards;
 }
 
 .report-box {
     position: absolute;
     top: 10900px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 24%;
     border-radius: 10%;
     height: 1400px;
     width: 1000px;
@@ -2518,7 +2514,7 @@ img[alt="waterbottom-img"].show {
 
 .report-box.show {
     opacity: 1;
-    transform: translateX(-50%);
+    transform: translateX(0%);
 }
 
 .report-box h2.report-title {
@@ -2589,13 +2585,12 @@ img[alt="waterbottom-img"].show {
 }
 
 .brownreport.show {
-    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+    animation: fadeUp2 0.2s ease-in-out 0.2s forwards;
 }
 
 .problem {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 27%;
     top: 12550px;
     /* ← Base top */
     font-size: clamp(24px, 5vw, 50px);
@@ -2611,7 +2606,7 @@ img[alt="waterbottom-img"].show {
 }
 
 .problem.show {
-    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+    animation: fadeUp2 0.2s ease-in-out 0.2s forwards;
 }
 
 .problem span {
@@ -2664,7 +2659,7 @@ img[alt="waterbottom-img"].show {
 }
 
 .critical-text.show {
-    animation: fadeUp2 1s ease-in-out 1s forwards;
+    animation: fadeUp2 0.2s ease-in-out 0.2s forwards;
 }
 
 .critical-text span {
@@ -2742,7 +2737,7 @@ img[alt="waterbottom-img"].show {
 }
 
 .fishsec h1.show {
-    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+    animation: fadeUp2 0.2s ease-in-out 0.2s forwards;
 }
 
 .littletext {
@@ -2764,7 +2759,7 @@ img[alt="waterbottom-img"].show {
     transform: translateX(-200px);
     /* เริ่มจากซ้ายไกลกว่าเดิม */
     opacity: 0;
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .e-6.show {
@@ -2782,7 +2777,7 @@ img[alt="waterbottom-img"].show {
     transform: translateX(200px);
     /* เริ่มจากขวาไกลกว่าเดิม */
     opacity: 0;
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .e-5.show {
@@ -2800,7 +2795,7 @@ img[alt="waterbottom-img"].show {
     transform: translateX(-200px);
     /* เริ่มจากซ้ายไกลกว่าเดิม */
     opacity: 0;
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .e-4.show {
@@ -2818,7 +2813,7 @@ img[alt="waterbottom-img"].show {
     transform: translateX(200px);
     /* เริ่มจากขวาไกลกว่าเดิม */
     opacity: 0;
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .e-3.show {
@@ -2836,7 +2831,7 @@ img[alt="waterbottom-img"].show {
     transform: translateX(-200px);
     /* เริ่มจากซ้ายไกลกว่าเดิม */
     opacity: 0;
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .e-2.show {
@@ -2854,7 +2849,7 @@ img[alt="waterbottom-img"].show {
     transform: translateX(200px);
     /* เริ่มจากขวาไกลกว่าเดิม */
     opacity: 0;
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .e-1.show {
@@ -2873,7 +2868,7 @@ img[alt="waterbottom-img"].show {
 }
 
 .fishsec h2.show {
-    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+    animation: fadeUp2 0.2s ease-in-out 0.2s forwards;
 }
 
 .doublecode2 {
@@ -3233,11 +3228,20 @@ p,
 }
 
 .youngmekongriver h1.show {
-    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+    animation: fadeUp2 0.2s ease-in-out 0.2s forwards;
 }
 
 .youngmekongriver h1 span {
     color: orangered;
+}
+
+
+/* ตัวอย่างการแก้ใน style.css */
+
+.critical-image1,
+.critical-image2 {
+    min-height: 500px;
+    object-fit: cover;
 }
 
 .critical-image1 {
@@ -3255,7 +3259,7 @@ p,
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     z-index: 2;
     transform: translateX(-200px);
-    /* เริ่มจากขวาไกลกว่าเดิม */
+    /* เริ่มจากซ้ายไกลกว่าเดิม */
     opacity: 0;
     transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
@@ -3272,12 +3276,60 @@ p,
     background-color: orangered;
     border-radius: 10%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-    /* เพื่อจัด layer กับ image */
-    z-index: 1;
     /* อยู่ด้านหลัง */
     margin: -1875px auto 40px auto;
     /* เลื่อนขึ้นมาซ้อนด้านหลัง image */
+    transition: 2s;
+    opacity: 0;
+    margin-top: -1850px !important;
+    /* ลองปรับตัวเลขนี้ดูครับ จาก -1100px */
+    position: relative;
+    z-index: 0;
+    /* ดันให้ข้อความอยู่เหนือรูป */
+}
+
+.brownreportyoungmekongriver.show {
+    opacity: 1;
+}
+
+
+/* สำหรับหน้าจอ Tablet หรือ Notebook เล็ก (กว้างไม่เกิน 1024px) */
+
+@media (max-width: 1024px) {
+    .brownreportyoungmekongriver1 {
+        margin-top: -300px !important;
+        /* ลดการดึงขึ้นเมื่อจอเล็กลง */
+        width: 80% !important;
+        /* ขยายความกว้างกล่องข้อความ */
+    }
+    .critical-image1,
+    .critical-image2 {
+        width: 90% !important;
+        /* ให้รูปไม่ล้นจอ */
+        height: auto !important;
+    }
+}
+
+
+/* สำหรับหน้าจอมือถือ (กว้างไม่เกิน 768px) */
+
+@media (max-width: 768px) {
+    .brownreportyoungmekongriver1 {
+        margin-top: -50px !important;
+        /* แทบไม่ต้องดึงขึ้นเลยในมือถือ */
+        width: 95% !important;
+        padding: 20px;
+    }
+    .infoyoungmekongriver2 {
+        margin-top: 0px !important;
+        /* ยกเลิกการดึงขึ้น */
+        flex-direction: column;
+        /* เรียงเนื้อหาแนวตั้ง */
+    }
+    .textyoungmekongriver3 {
+        font-size: 1.5rem !important;
+        /* ลดขนาดฟอนต์ */
+    }
 }
 
 .infoyoungmekongriver1 {
@@ -3300,8 +3352,8 @@ p,
 .textyoungmekongriver1 {
     font-size: 2.1rem;
     color: #333333;
-    transform: translateX(200px);
-    /* เริ่มจากขวาไกลกว่าเดิม */
+    transform: translateX(-200px);
+    /* เริ่มจากซ้ายไกลกว่าเดิม */
     opacity: 0;
     transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
@@ -3353,7 +3405,7 @@ p,
 }
 
 .details1 h3.show {
-    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+    animation: fadeUp2 0.2s ease-in-out 0.2s forwards;
 }
 
 .details1 h3:last-child {
@@ -3372,7 +3424,10 @@ p,
     /* รักษาสัดส่วน */
     position: relative;
     z-index: 2;
-    /* อยู่ด้านบน */
+    transform: translateX(-200px);
+    /* เริ่มจากซ้ายไกลกว่าเดิม */
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
     border-radius: 10%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -3394,6 +3449,12 @@ p,
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     margin: -1100px auto 40px auto;
     z-index: 1;
+    transition: 2s;
+    opacity: 0;
+}
+
+.brownreportyoungmekongriver1.show {
+    opacity: 1;
 }
 
 .infoyoungmekongriver2 {
@@ -3419,8 +3480,8 @@ p,
     margin: 0;
     position: relative;
     z-index: 999;
-    transform: translateX(200px);
-    /* เริ่มจากขวาไกลกว่าเดิม */
+    transform: translateX(-200px);
+    /* เริ่มจากซ้ายไกลกว่าเดิม */
     opacity: 0;
     transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
@@ -3462,9 +3523,6 @@ p,
     position: relative;
     z-index: 999;
 }
-
-
-/* ข้อความ h3 */
 
 .details2 h3 {
     transform: translate(3.5%, -5%);
@@ -3509,32 +3567,55 @@ p,
     transform: translateX(0);
 }
 
+
+/* ตัวแม่ที่คลุมทั้งรูปและกล่องข้อความ */
+
+.mekong-wrapper {
+    position: relative;
+    /* เป็นจุดอ้างอิง */
+    width: 100%;
+    /* ไม่ต้องมี margin ติดลบ */
+}
+
 .brownreportyoungmekongriver2 {
     width: 44.2%;
     height: 540px;
-    left: -1%;
     background-color: orangered;
     border-radius: 10%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    margin: -2175px auto 40px auto;
-    /* เลื่อนขึ้นมาซ้อนด้านหลังภาพ */
-    position: relative;
-    z-index: 3;
-    /* อยู่ด้านหลังภาพ */
+    /* --- เปลี่ยนส่วนนี้ --- */
+    position: absolute;
+    /* ลอยอิสระเทียบกับตัวแม่ */
+    bottom: -2575%;
+    /* ห่างจากขอบบนของตัวแม่ 10% (ปรับเลขนี้เอา) */
+    left: 27%;
+    /* ตำแหน่งแนวนอน */
+    z-index: 1;
+    /* อยู่ด้านหลัง */
+    /* --- ลบส่วนนี้ทิ้ง --- */
+    transition: 2s;
+    opacity: 0;
+}
+
+.brownreportyoungmekongriver2.show {
+    opacity: 1;
 }
 
 .infoyoungmekongriver3 {
     display: flex;
     justify-content: center;
-    /* จัดแนวนอน */
     align-items: center;
-    /* จัดแนวตั้ง */
-    height: 500px;
-    /* กำหนดความสูง container */
+    /* เปลี่ยนจาก height เป็น min-height เพื่อรองรับข้อความยาวๆ ในมือถือ */
+    min-height: 500px;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
+    /* เพิ่ม Padding บนล่างหน่อย กันข้อความชิดขอบ */
     border-radius: 12px;
-    margin-top: -150px;
+    /* ระวังค่านี้: ถ้าข้างบนโหลดไม่เสร็จ มันจะทับครับ */
+    margin-top: -1700px;
+    position: relative;
+    z-index: 10;
+    /* ดันให้ลอยเหนือส่วนอื่นๆ */
 }
 
 .textyoungmekongriver3 {
@@ -3543,11 +3624,12 @@ p,
     color: #333333;
     margin: 0;
     position: relative;
-    z-index: 999;
-    transform: translateX(200px);
-    /* เริ่มจากขวาไกลกว่าเดิม */
+    /* Animation เริ่มต้น */
+    transform: translateX(-100px);
+    /* ลดระยะลงหน่อยเพื่อให้สมูทขึ้น */
     opacity: 0;
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transition: 1s;
+    /* เปลี่ยน Easing ให้ดูพรีเมียมขึ้น */
 }
 
 .textyoungmekongriver3.show {
@@ -3556,50 +3638,80 @@ p,
 }
 
 
-/* span เด่น */
+/* รวมโค้ด Span ไว้ที่เดียว */
 
 .textyoungmekongriver3 span {
     font-size: 3rem;
     font-weight: 700;
     color: orangered;
+    display: inline-block;
+    /* ช่วยให้จัด Animation ได้ดีขึ้นถ้าอยากทำแยกคำ */
 }
 
 
-/* span1 เด่นต่างสี */
+/* =======================
+   Responsive (มือถือ)
+======================= */
 
-.textyoungmekongriver3 span1 {
-    font-weight: 700;
-    color: orangered;
+@media (max-width: 768px) {
+    .infoyoungmekongriver3 {
+        margin-top: 0;
+        /* ยกเลิกการดึงขึ้นในมือถือ เพื่อให้อ่านง่าย */
+        min-height: auto;
+        /* ความสูงตามจริง */
+        padding: 40px 15px;
+    }
+    .textyoungmekongriver3 {
+        font-size: 1.5rem;
+        /* ลดขนาดฟอนต์ */
+        transform: translateY(50px);
+        /* เปลี่ยนจากเลื่อนข้าง เป็นลอยขึ้นจากด้านล่างแทนในมือถือ */
+    }
+    .textyoungmekongriver3.show {
+        transform: translateY(0);
+    }
+    .textyoungmekongriver3 span {
+        font-size: 2rem;
+        /* ลดขนาดตัวเน้น */
+        display: block;
+        /* ให้คำเน้นขึ้นบรรทัดใหม่ (ถ้าต้องการให้เด่นสุดๆ) */
+        margin-top: 10px;
+    }
 }
 
 
 /* กล่องรายละเอียด */
 
 .details3 {
-    transform: translate(55%, -18%);
+    margin-left: auto;
+    margin-right: 5%;
+    margin-top: -100px;
     width: 90%;
     max-width: 900px;
     padding: 25px;
     background-color: #f0ae82;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-
-/* ข้อความ h3 */
-
-.details3 h3 {
-    transform: translate(3.5%, -5%);
-    font-size: 1.6rem;
-    color: #333333;
-    text-align: justify;
-    /* อ่านง่าย ชิดสองฝั่ง */
-    margin-bottom: 15px;
+    position: relative;
+    z-index: 10;
+    left: -22.5%;
     opacity: 0;
 }
 
-.details3 h3.show {
-    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+.details3 h3 {
+    font-size: 1.6rem;
+    color: #333333;
+    text-align: justify;
+    margin-bottom: 15px;
+    opacity: 1;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.details3.show {
+    /* ไม่ต้องเรียก keyframes แยก ใช้ transition เลยง่ายกว่า */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .details3 h3:last-child {
@@ -3610,10 +3722,10 @@ p,
     width: 90%;
     max-width: 900px;
     /* จำกัดความกว้าง */
-    margin: 10px auto 40px auto;
+    margin: 100px auto 40px auto;
     /* margin-top = 10px เลื่อนขึ้น */
     position: relative;
-    top: -100px;
+    top: -50px;
     /* เลื่อนขึ้นอีกเล็กน้อย */
     position: relative;
     z-index: 999;
@@ -3642,7 +3754,7 @@ p,
 }
 
 .f-1.show {
-    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+    animation: fadeUp2 0.2s ease-in-out 0.2s forwards;
 }
 
 .f0-imgs2 {
@@ -3709,6 +3821,7 @@ p,
     position: relative;
     width: 100%;
     overflow: hidden;
+    z-index: 20;
 }
 
 .f-5 {
@@ -3721,11 +3834,7 @@ p,
     /* เดิม top:125px → responsive */
     opacity: 0.5;
     /* ตามที่คุณตั้งไว้ */
-    z-index: 1;
-}
-
-.f-5.show {
-    animation: fadeUp2 0.5s ease-in-out 0.5s forwards;
+    z-index: 20;
 }
 
 
@@ -3844,4 +3953,68 @@ a:hover {
     /* กำหนดความสูงของพื้นที่สีดำเข้มที่ส่วนท้าย */
     width: 100%;
     /* Background color inherited from .reference-section (#363636) */
+}
+
+
+/* =======================
+   Scroll Buttons Style
+======================= */
+
+.scroll-nav-container {
+    position: fixed;
+    right: 20px;
+    /* ชิดขวา 20px */
+    top: 50%;
+    /* อยู่ตรงกลางแนวตั้ง */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    /* เรียงปุ่มเป็นแนวตั้ง */
+    gap: 15px;
+    /* ระยะห่างระหว่างปุ่ม */
+    z-index: 1002;
+    /* ให้ค่าสูงกว่า Chat Widget (1000) */
+}
+
+.scroll-btn {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 69, 0, 0.8);
+    /* สีส้มธีมเดียวกับเว็บ (โปร่งแสงนิดหน่อย) */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    /* ปุ่มวงกลม */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ปรับขนาดไอคอน SVG */
+
+.scroll-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* เอฟเฟกต์ตอนเอาเมาส์ชี้ */
+
+.scroll-btn:hover {
+    background-color: orangered;
+    /* สีเข้มขึ้น */
+    transform: scale(1.15);
+    /* ขยายใหญ่ขึ้นเล็กน้อย */
+    box-shadow: 0 6px 12px rgba(255, 69, 0, 0.4);
+}
+
+
+/* เอฟเฟกต์ตอนกด */
+
+.scroll-btn:active {
+    transform: scale(0.95);
 }

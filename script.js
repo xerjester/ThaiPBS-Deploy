@@ -233,7 +233,7 @@
             }, { threshold: 0.2 });
 
             // ✅ ระบุ element ที่ต้องการให้มีอนิเมชันตอน scroll เข้ามา
-            document.querySelectorAll("#about, #aboutinfo, #abouttext, #test, #picture, .observe, .water-container, .image-container, .pin-btn1, .pin-btn2, .pin-btn3, .pin-btn4, .pin-btn5, .pin-btn6,.pin-btn7 ,.pin-btn8 , .image-container span, .layer11, .orengeContainer1, .orengeContainer2, .orengeContainer3, .testheadtext, .img1, .img2, .img3, .imageBox p, .testContainer h2, #test img\[alt=\"bottom-img\"\], img\[alt=\"img-left\"\], img\[alt=\"img-right\"\], .fourthpage h1, .ground, img\[alt=\"waterbottom-img\"\], .testContainer h1, .testContainer h2,  .imageBox, .imageBox img, .imageBox p, .May.report h1, .may-text, .may-card, .brownContainer1, .brownContainer2, .pollution h1, .brownreport, .report-box, .problem, .critical-image, .critical-text, .fishsec h1, .e-6, .e-2, .e-1, .fishsec h2, .e-3,.e-4, .e-5, .youngmekongriver h1, .f-1, .f-5, .critical-image1, .critical-image2, .critical-image3, .textyoungmekongriver1, .textyoungmekongriver2, .textyoungmekongriver3, .details1 h3, .details2 h3, .details3 h3, .fishsec .melt-img")
+            document.querySelectorAll("#about, #aboutinfo, #abouttext, #test, #picture, .observe, .water-container, .image-container, .pin-btn1, .pin-btn2, .pin-btn3, .pin-btn4, .pin-btn5, .pin-btn6,.pin-btn7 ,.pin-btn8 , .image-container span, .layer11, .orengeContainer1, .orengeContainer2, .orengeContainer3, .testheadtext, .img1, .img2, .img3, .imageBox p, .testContainer h2, #test img\[alt=\"bottom-img\"\], img\[alt=\"img-left\"\], img\[alt=\"img-right\"\], .fourthpage h1, .ground, img\[alt=\"waterbottom-img\"\], .testContainer h1, .testContainer h2,  .imageBox, .imageBox img, .imageBox p, .May.report h1, .may-text, .may-card, .brownContainer1, .brownContainer2, .pollution h1, .brownreport, .report-box, .problem, .critical-image, .critical-text, .fishsec h1, .e-6, .e-2, .e-1, .fishsec h2, .e-3,.e-4, .e-5, .youngmekongriver h1, .f-1, .f-5, .critical-image1, .critical-image2, .critical-image3, .textyoungmekongriver1, .textyoungmekongriver2, .textyoungmekongriver3, .details1 h3, .details2 h3, .details3, .details3 h3, .fishsec .melt-img, .brownreportyoungmekongriver, .brownreportyoungmekongriver1, .brownreportyoungmekongriver2")
                 .forEach(el => observer.observe(el));
         });
         document.addEventListener("DOMContentLoaded", () => {
@@ -473,3 +473,30 @@
         }
 
         document.getElementById('openPopup').addEventListener('click', showQuiz);
+
+        // =======================
+        // Scroll Button Logic
+        // =======================
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollUpBtn = document.getElementById('scrollUpBtn');
+            const scrollDownBtn = document.getElementById('scrollDownBtn');
+
+            if (scrollUpBtn && scrollDownBtn) {
+                // ฟังก์ชันเลื่อนขึ้น
+                scrollUpBtn.addEventListener('click', () => {
+                    window.scrollBy({
+                        top: -window.innerHeight + 50, // เลื่อนขึ้น (ติดลบ) เกือบเต็มหน้าจอ
+                        behavior: 'smooth' // เลื่อนแบบนุ่มนวล
+                    });
+                });
+
+                // ฟังก์ชันเลื่อนลง
+                scrollDownBtn.addEventListener('click', () => {
+                    window.scrollBy({
+                        top: window.innerHeight - 50, // เลื่อนลง (บวก) เกือบเต็มหน้าจอ
+                        behavior: 'smooth' // เลื่อนแบบนุ่มนวล
+                    });
+                });
+            }
+        });
